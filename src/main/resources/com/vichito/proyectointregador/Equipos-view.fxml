@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="background" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.vichito.proyectointregador.Controller.EquiposController">
+   <children>
+      <Label layoutX="247.0" layoutY="32.0" text="Equipos" textFill="WHITE">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Button fx:id="InventaryButton" layoutX="221.0" layoutY="288.0" mnemonicParsing="false" onMouseClicked="#OnClickInventaryButton" style="-fx-background-color: #1e32c9;" text="Ver equipos a Cargo  " textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="BuscarButton" layoutX="221.0" layoutY="175.0" mnemonicParsing="false" onMouseClicked="#OnClickBuscarButton" prefHeight="31.0" prefWidth="165.0" style="-fx-background-color: #1e32c9;" text="Buscar Equipos" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="NewEquipoButton" layoutX="221.0" layoutY="115.0" mnemonicParsing="false" onMouseClicked="#OnClickNewEquipoButton" prefHeight="31.0" prefWidth="165.0" style="-fx-background-color: #1e32c9;" text="Agregar Equipos" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="EliminarButton" layoutX="221.0" layoutY="236.0" mnemonicParsing="false" onMouseClicked="#OnClickEliminarButton" prefHeight="31.0" prefWidth="165.0" style="-fx-background-color: #1e32c9;" text="Eliminar Equipos" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="SalirButton" layoutX="537.0" layoutY="361.0" mnemonicParsing="false" onMouseClicked="#OnClickSalirButton" style="-fx-background-color: #1e32c9;" text="Salir" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
