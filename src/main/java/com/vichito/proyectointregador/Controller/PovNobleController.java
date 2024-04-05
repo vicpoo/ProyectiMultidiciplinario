@@ -51,7 +51,7 @@ public class PovNobleController {
     @FXML
     void OnClickEliminarButton(MouseEvent event) throws IOException{
       HelloApplication escena = new HelloApplication();
-      escena.changeScene("EliminarEquipos-view.fxml");
+      escena.changeScene("EliminarEquiposUser-view.fxml");
     }
 
     @FXML
