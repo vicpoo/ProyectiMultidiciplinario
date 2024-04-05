@@ -43,12 +43,15 @@ public class EquiposController {
     }
 
     @FXML
-    void OnClickEliminarButton(MouseEvent event) {
-
+    void OnClickEliminarButton(MouseEvent event) throws IOException{
+     HelloApplication escena = new HelloApplication();
+     escena.changeScene("EliminarEquiposjefe-view.fxml");
     }
 
     @FXML
-    void OnClickInventaryButton(MouseEvent event) {
+    void OnClickInventaryButton(MouseEvent event) throws IOException{
+        HelloApplication escena = new HelloApplication();
+        escena.changeScene("");
 
     }
 

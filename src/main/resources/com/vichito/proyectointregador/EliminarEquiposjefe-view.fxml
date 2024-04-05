@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane fx:id="background" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.vichito.proyectointregador.Controller.EliminarEquiposjefeController">
    <children>
@@ -15,7 +16,23 @@
                   <Font size="25.0" />
                </font>
             </Label>
+            <TextField fx:id="LabelBuscarNumeroSerie" layoutX="82.0" layoutY="188.0" />
+            <Label layoutX="66.0" layoutY="142.0" text="Ingrese el numero de serie " textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Button fx:id="BuscarButton" layoutX="124.0" layoutY="334.0" mnemonicParsing="false" onMouseClicked="#OnClickBuscarButton" style="-fx-background-color: white;" text="Buscar">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
          </children>
       </Pane>
+      <Button fx:id="SalirButton" layoutX="516.0" layoutY="346.0" mnemonicParsing="false" onMouseClicked="#OnClickSalirButton" style="-fx-background-color: white;" text="Salir">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
