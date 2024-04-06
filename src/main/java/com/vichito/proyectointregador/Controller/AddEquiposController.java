@@ -5,11 +5,15 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.vichito.proyectointregador.HelloApplication;
+import com.vichito.proyectointregador.Models.EquiposComputo;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+
+import static com.vichito.proyectointregador.Controller.AddEquiposjefe.equiposComputo;
 
 public class AddEquiposController {
 
@@ -42,7 +46,25 @@ public class AddEquiposController {
 
     @FXML
     void OnClickAddButton(MouseEvent event) {
-
+    try{
+     String TipoModelo = TipoEquipoLabel.getText();
+     String modelo = ModeloLabel.getText();
+     String marca = MarcaLabel.getText();
+     int NumeroSerie = Integer.parseInt(NumerSerieLabel.getText());
+        EquiposComputo nuevoEquipo = new EquiposComputo(TipoModelo,modelo,marca,NumeroSerie);
+        if (equiposComputo.addEquiposComputo(nuevoEquipo)){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Hecho");
+            alert.setContentText("Agregado con éxito");
+            alert.showAndWait();
+        }
+    }
+    catch (Exception e){
+        Alert alert= new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Error");
+        alert.setContentText("Ha habido un error al guardar datos" + e.getMessage());
+        alert.showAndWait();
+    }
     }
 
     @FXML
