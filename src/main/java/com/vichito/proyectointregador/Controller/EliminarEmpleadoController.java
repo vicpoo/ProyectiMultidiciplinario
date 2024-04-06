@@ -47,5 +47,4 @@ public class EliminarEmpleadoController {
         background.setStyle(" -fx-background-color: linear-gradient(to right, black, #00008B);");
 
     }
-
 }

@@ -14,12 +14,6 @@ import javafx.scene.layout.AnchorPane;
 public class AddEmpleadoController {
 
     @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
-
-    @FXML
     private TextField AreaLabel;
 
     @FXML
@@ -30,6 +24,12 @@ public class AddEmpleadoController {
 
     @FXML
     private TextField IdLabel;
+
+    @FXML
+    private TextField LabelApellidos;
+
+    @FXML
+    private TextField LabelEmail;
 
     @FXML
     private TextField NombreLabel;
