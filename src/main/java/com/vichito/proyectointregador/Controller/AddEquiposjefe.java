@@ -56,6 +56,7 @@ public class AddEquiposjefe {
              alert.setTitle("Hecho");
              alert.setContentText("Agregado con exito");
              alert.showAndWait();
+             System.out.println("Se agrego correctamente" + NumeroSerie);
          }
      }
      catch (Exception e){

@@ -20,4 +20,15 @@ public boolean addEmpleados(Empleados empleados){
     status = listaEmpleados.add(empleados);
     return status;
      }
+
+    public boolean removeEmpleado(int ID) {
+        for (Empleados empleado : listaEmpleados) {
+            if (empleado.getID() == ID) {
+                listaEmpleados.remove(empleado);
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

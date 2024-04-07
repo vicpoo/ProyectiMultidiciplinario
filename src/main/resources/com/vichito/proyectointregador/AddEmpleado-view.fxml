@@ -7,60 +7,62 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="background" prefHeight="1080.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.vichito.proyectointregador.Controller.AddEmpleadoController">
-      <Pane layoutX="176.0" prefHeight="592.0" prefWidth="288.0" style="-fx-background-color: black;">
+<AnchorPane fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.vichito.proyectointregador.Controller.AddEmpleadoController">
+   <children>
+      <Pane layoutX="164.0" prefHeight="400.0" prefWidth="288.0" style="-fx-background-color: black;">
          <children>
-            <Label layoutX="65.0" layoutY="57.0" text="Nuevo empleado" textFill="WHITE">
+            <Label layoutX="63.0" layoutY="22.0" text="Nuevo empleado" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label layoutX="114.0" layoutY="99.0" text="Nombre" textFill="WHITE">
+            <Label layoutX="114.0" layoutY="52.0" text="Nombre" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label layoutX="126.0" layoutY="243.0" text="Area" textFill="WHITE">
+            <Label layoutX="126.0" layoutY="161.0" text="Area" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label layoutX="115.0" layoutY="306.0" text="Direccion" textFill="WHITE">
+            <Label layoutX="111.0" layoutY="216.0" text="Direccion" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label layoutX="139.0" layoutY="430.0" text="Id" textFill="WHITE">
+            <Label layoutX="134.0" layoutY="344.0" text="Id" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="NombreLabel" layoutX="65.0" layoutY="130.0" prefHeight="25.0" prefWidth="152.0" />
-            <TextField fx:id="AreaLabel" layoutX="64.0" layoutY="271.0" prefHeight="25.0" prefWidth="152.0" />
-            <TextField fx:id="DireccionLabel" layoutX="65.0" layoutY="334.0" prefHeight="25.0" prefWidth="152.0" />
-            <TextField fx:id="IdLabel" layoutX="68.0" layoutY="468.0" prefHeight="25.0" prefWidth="152.0" />
-            <Button fx:id="GuardarButton" layoutX="107.0" layoutY="526.0" mnemonicParsing="false" onMouseClicked="#OnClickGuardarButton" style="-fx-background-color: White;" text="Guardar">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Button>
-            <Label layoutX="108.0" layoutY="176.0" text="Apellidos" textFill="WHITE">
+            <TextField fx:id="NombreLabel" layoutX="66.0" layoutY="73.0" prefHeight="25.0" prefWidth="152.0" />
+            <TextField fx:id="AreaLabel" layoutX="68.0" layoutY="182.0" prefHeight="25.0" prefWidth="152.0" />
+            <TextField fx:id="DireccionLabel" layoutX="66.0" layoutY="244.0" prefHeight="25.0" prefWidth="152.0" />
+            <TextField fx:id="IdLabel" layoutX="65.0" layoutY="365.0" prefHeight="25.0" prefWidth="152.0" />
+            <Label layoutX="110.0" layoutY="107.0" text="Apellidos" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="LabelApellidos" layoutX="64.0" layoutY="210.0" prefHeight="25.0" prefWidth="152.0" />
-            <TextField fx:id="LabelEmail" layoutX="67.0" layoutY="397.0" />
-            <Label layoutX="82.0" layoutY="369.0" text="Correo Electronico" textFill="WHITE">
+            <TextField fx:id="LabelApellidos" layoutX="68.0" layoutY="128.0" prefHeight="25.0" prefWidth="152.0" />
+            <TextField fx:id="LabelEmail" layoutX="68.0" layoutY="312.0" prefHeight="25.0" prefWidth="152.0" />
+            <Label layoutX="83.0" layoutY="280.0" text="Correo Electronico" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
          </children>
       </Pane>
-      <Button fx:id="SalirButton" layoutX="545.0" layoutY="533.0" mnemonicParsing="false" onMouseClicked="#OnClickSalirButton" style="-fx-background-color: White;" text="Salir">
+      <Button fx:id="SalirButton" layoutX="519.0" layoutY="355.0" mnemonicParsing="false" onMouseClicked="#OnClickSalirButton" style="-fx-background-color: White;" text="Salir">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
+      <Button fx:id="GuardarButton" layoutX="507.0" layoutY="317.0" mnemonicParsing="false" onMouseClicked="#OnClickGuardarButton" style="-fx-background-color: White;" text="Guardar">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+   </children>
 </AnchorPane>

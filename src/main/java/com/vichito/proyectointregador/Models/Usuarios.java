@@ -7,4 +7,12 @@ public class Usuarios extends Personal{
      super(nombre,apellido,ID);
      this.Usuario = Usuario;
     }
+
+    public String getUsuario() {
+        return Usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        Usuario = usuario;
+    }
 }

@@ -63,6 +63,7 @@ public class AddEmpleadoController {
                 alert.setTitle("Hecho");
                 alert.setContentText("Agregado con éxito");
                 alert.showAndWait();
+                System.out.println("se agrego" + nombre);
             }
         }
         catch (Exception e){
@@ -82,7 +83,6 @@ public class AddEmpleadoController {
     @FXML
         void initialize() {
             background.setStyle(" -fx-background-color: linear-gradient(to right, black, #00008B);");
-
         }
 
 }
