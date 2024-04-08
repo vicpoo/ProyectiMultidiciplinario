@@ -16,7 +16,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 
-
 import static com.vichito.proyectointregador.Controller.AddUsuarioController.empresa;
 public class AddEmpleadoController {
 
@@ -57,7 +56,9 @@ public class AddEmpleadoController {
             int ID = Integer.parseInt(IdLabel.getText());
             String Direccion = DireccionLabel.getText();
             String Area = AreaLabel.getText();
+
             Empleados nuevoEmpleado = new Empleados(nombre,apellidos,ID,Email,Direccion,Area);
+
             if (empresa.addEmpleados(nuevoEmpleado)){
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Hecho");

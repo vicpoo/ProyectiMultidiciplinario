@@ -1,4 +1,6 @@
 package com.vichito.proyectointregador;
+import com.vichito.proyectointregador.Models.EquiposComputo;
+import com.vichito.proyectointregador.Models.Personal;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -18,6 +20,13 @@ public class HelloApplication extends Application {
         stage.setScene(scene);
         stage.show();
     }
+    private static Personal persona = new Personal();
+
+private static EquiposComputo equiposComputo = new EquiposComputo();
+
+    public static Personal getPersona(){ return persona;}
+
+    public static EquiposComputo getEquiposComputo() { return equiposComputo;}
 
 
 

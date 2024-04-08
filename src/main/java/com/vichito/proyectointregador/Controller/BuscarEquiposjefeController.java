@@ -12,11 +12,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 public class BuscarEquiposjefeController {
 
-    private EquiposComputo equipoComputo = new EquiposComputo();
     @FXML
     private ResourceBundle resources;
 
@@ -30,7 +28,7 @@ public class BuscarEquiposjefeController {
     private TextField EquipoLabel;
 
     @FXML
-    private TextField NumeroSerieLabel;
+    private TextField NumeroSerieTxt;
 
     @FXML
     private Button SalirButton;
@@ -40,26 +38,30 @@ public class BuscarEquiposjefeController {
 
     @FXML
     void OnClickBuscarButton(MouseEvent event) {
-        try {
-            int numeroSerie = Integer.parseInt(NumeroSerieLabel.getText());
-            EquiposComputo equipoEncontrado = equipoComputo.buscarPorNumeroSerie(numeroSerie);
-            if (equipoEncontrado != null) {
-                mostrarAlerta(AlertType.INFORMATION, "Equipo encontrado", equipoEncontrado.toString());
-            } else {
-                mostrarAlerta(AlertType.WARNING, "Equipo no encontrado", "No se encontró ningún equipo con el número de serie " + numeroSerie);
+        int numeroSerie = Integer.parseInt(NumeroSerieTxt.getText());
+        ArrayList<EquiposComputo> listaEquipos = HelloApplication.getEquiposComputo().getlistaEquipos();
+
+        EquiposComputo equipoEncontrado = null;
+        for (EquiposComputo equiposComputo : listaEquipos) {
+            if (equiposComputo.getNumeroSerie() == numeroSerie) {
+                equipoEncontrado = equiposComputo;
+                break;
             }
-        } catch (NumberFormatException e) {
-            mostrarAlerta(AlertType.ERROR, "Error", "Por favor, introduce un número válido en el campo de número de serie.");
+        }
+
+        if (equipoEncontrado != null) {
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Búsqueda Exitosa");
+            alert.setContentText("Se encontró el equipo.");
+            alert.showAndWait();
+        } else {
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Búsqueda Fallida");
+            alert.setContentText("No se encontró el equipo.  :C");
+            alert.showAndWait();
         }
     }
 
-    private void mostrarAlerta(AlertType tipoAlerta, String titulo, String mensaje) {
-        Alert alerta = new Alert(tipoAlerta);
-        alerta.setTitle(titulo);
-        alerta.setHeaderText(null);
-        alerta.setContentText(mensaje);
-        alerta.showAndWait();
-    }
 
     @FXML
     void OnClickSalirButton(MouseEvent event) throws IOException {

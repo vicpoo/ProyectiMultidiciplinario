@@ -1,18 +1,47 @@
 package com.vichito.proyectointregador.Models;
 
+import java.util.ArrayList;
+
 public class Personal {
     String nombre;
     String apellido;
     int ID;
 
-public Personal(int ID,String nombre, String apellido){
-this.nombre = nombre;
-this.apellido = apellido;
-this.ID = ID;
-}
+    private ArrayList<Usuarios> listaUsuario;
 
-public Personal(String nombre, String apellido, int ID){
-}
+    private ArrayList<Empleados> listaEmpleados;
+
+    public Personal(){
+        listaUsuario = new ArrayList<>();
+        listaEmpleados = new ArrayList<>();
+    }
+
+    public ArrayList<Usuarios> getListaUsuario(){ return listaUsuario;}
+
+    public ArrayList<Empleados> getListaEmpleados() { return listaEmpleados;}
+
+
+    public Personal(String nombre, String apellido, int ID) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.ID = ID;
+    }
+
+    public boolean addUsuarios(Usuarios usuarios){
+        boolean status;
+        status = listaUsuario.add(usuarios);
+        return status;
+    }
+
+
+    public boolean addEmpleados(Empleados empleados){
+        boolean status;
+        status = listaEmpleados.add(empleados);
+        return status;
+    }
+
+
+
 
     public String getNombre() {
         return nombre;

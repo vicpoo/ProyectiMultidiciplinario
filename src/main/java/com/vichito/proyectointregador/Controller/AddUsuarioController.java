@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.vichito.proyectointregador.Models.Empresa;
+import com.vichito.proyectointregador.Models.Personal;
 import com.vichito.proyectointregador.Models.Usuarios;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
@@ -17,7 +18,7 @@ import javafx.scene.layout.AnchorPane;
 
 public class AddUsuarioController {
 
-protected static Empresa empresa = new Empresa();
+    protected static Personal empresa = new Personal();
 
     @FXML
     private Button GuardarButton;

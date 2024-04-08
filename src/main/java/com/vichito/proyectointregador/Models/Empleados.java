@@ -12,13 +12,6 @@ public class Empleados extends Personal{
      this.Email = Email;
     }
 
-    public Empleados(int ID, String nombre, String apellido, String direccion, String area, String email) {
-        super(ID, nombre, apellido);
-        Direccion = direccion;
-        Area = area;
-        Email = email;
-    }
-
     public String getDireccion() {
         return Direccion;
     }

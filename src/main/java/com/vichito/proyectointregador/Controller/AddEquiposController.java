@@ -2,6 +2,7 @@ package com.vichito.proyectointregador.Controller;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import com.vichito.proyectointregador.HelloApplication;
@@ -46,25 +47,23 @@ public class AddEquiposController {
 
     @FXML
     void OnClickAddButton(MouseEvent event) {
-    try{
-     String TipoModelo = TipoEquipoLabel.getText();
-     String modelo = ModeloLabel.getText();
-     String marca = MarcaLabel.getText();
-     int NumeroSerie = Integer.parseInt(NumerSerieLabel.getText());
-        EquiposComputo nuevoEquipo = new EquiposComputo(TipoModelo,modelo,marca,NumeroSerie);
-        if (equiposComputo.addEquiposComputo(nuevoEquipo)){
+        ArrayList<EquiposComputo> equiposComputos = HelloApplication.getEquiposComputo().getlistaEquipos();
+
+        String TipoEquipo = TipoEquipoLabel.getText();
+        String modelo = ModeloLabel.getText();
+        String marca = MarcaLabel.getText();
+        int NumeroSerie = Integer.parseInt(NumerSerieLabel.getText());
+
+        EquiposComputo equipo = new EquiposComputo(TipoEquipo,modelo,marca,NumeroSerie);
+
+        if (equiposComputos.add(equipo)){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Hecho");
-            alert.setContentText("Agregado con éxito");
+            alert.setContentText("Agregado con exito");
             alert.showAndWait();
+            System.out.println("Se agrego correctamente" + NumeroSerie);
         }
-    }
-    catch (Exception e){
-        Alert alert= new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Error");
-        alert.setContentText("Ha habido un error al guardar datos" + e.getMessage());
-        alert.showAndWait();
-    }
+        limpiar();
     }
 
     @FXML
@@ -77,6 +76,13 @@ public class AddEquiposController {
     void initialize() {
         background.setStyle(" -fx-background-color: linear-gradient(to right, black, #00008B);");
 
+    }
+
+    private void limpiar() {
+        MarcaLabel.clear();
+        ModeloLabel.clear();
+        TipoEquipoLabel.clear();
+        NumerSerieLabel.clear();
     }
 
 }

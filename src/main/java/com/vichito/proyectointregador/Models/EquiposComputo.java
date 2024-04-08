@@ -10,28 +10,28 @@ public class EquiposComputo {
     int NumeroSerie;
     String TipoEquipo;
 
+    private ArrayList<EquiposComputo> listaEquipos;
+    public EquiposComputo() { listaEquipos = new ArrayList<>();}
 
-    public EquiposComputo(String marca, String modelo, int NumeroSerie, String TipoEquipo) {
-
-    }
-
-    ArrayList<EquiposComputo> listaEquipo = new ArrayList<>();
+    public ArrayList<EquiposComputo> getlistaEquipos() { return listaEquipos;}
 
     public EquiposComputo(String tipoEquipo, String modelo, String marca, int numeroSerie) {
+        this.TipoEquipo = tipoEquipo;
+        this.modelo = modelo;
+        this.marca = marca;
+        this.NumeroSerie = numeroSerie;
     }
 
-    public EquiposComputo() {
 
-    }
 
     public boolean addEquiposComputo(EquiposComputo equiposComputo) {
         boolean status;
-        status = listaEquipo.add(equiposComputo);
+        status = listaEquipos.add(equiposComputo);
         return status;
     }
 
     public EquiposComputo buscarPorNumeroSerie(int numeroSerie){
-        for (EquiposComputo equipo : listaEquipo){
+        for (EquiposComputo equipo : listaEquipos){
             if (equipo.getNumeroSerie() == numeroSerie){
                 return equipo;
             }
@@ -70,14 +70,6 @@ public class EquiposComputo {
 
     public void setTipoEquipo(String tipoEquipo) {
         TipoEquipo = tipoEquipo;
-    }
-
-    public ArrayList<EquiposComputo> getListaEquipo() {
-        return listaEquipo;
-    }
-
-    public void setListaEquipo(ArrayList<EquiposComputo> listaEquipo) {
-        this.listaEquipo = listaEquipo;
     }
 
     public String toString() {

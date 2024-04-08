@@ -1,8 +1,10 @@
 package com.vichito.proyectointregador.Controller;
-
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
+import com.vichito.proyectointregador.Models.EquiposComputo;
+import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
 import com.vichito.proyectointregador.HelloApplication;
 import javafx.fxml.FXML;
@@ -36,8 +38,30 @@ public class BuscarEquiposController {
 
     @FXML
     void OnClickBuscarButton(MouseEvent event) {
+        int numeroSerie = Integer.parseInt(NumeroSerieLabel.getText());
+        ArrayList<EquiposComputo> listaEquipos = HelloApplication.getEquiposComputo().getlistaEquipos();
 
+        EquiposComputo equipoEncontrado = null;
+        for (EquiposComputo equiposComputo : listaEquipos) {
+            if (equiposComputo.getNumeroSerie() == numeroSerie) {
+                equipoEncontrado = equiposComputo;
+                break;
+            }
+        }
+
+        if (equipoEncontrado != null) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Búsqueda Exitosa");
+            alert.setContentText("Se encontró el equipo.");
+            alert.showAndWait();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Búsqueda Fallida");
+            alert.setContentText("No se encontró el equipo.  :C");
+            alert.showAndWait();
+        }
     }
+
 
     @FXML
     void OnClickSalirButton(MouseEvent event) throws IOException {

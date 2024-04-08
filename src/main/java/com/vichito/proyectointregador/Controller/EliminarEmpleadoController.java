@@ -36,7 +36,7 @@ public class EliminarEmpleadoController {
 
     @FXML
     void OnClickEliminarButton(MouseEvent event) {
-        try {
+       /* try {
             int ID = Integer.parseInt(IdLabel.getText());
             if (empresa.removeEmpleado(ID)) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -54,9 +54,8 @@ public class EliminarEmpleadoController {
             alert.setTitle("Error");
             alert.setContentText("Por favor, ingrese un ID válido");
             alert.showAndWait();
-        }
+        } */
     }
-
     @FXML
     void OnClickSalirButton(MouseEvent event) throws IOException {
         HelloApplication escena = new HelloApplication();
