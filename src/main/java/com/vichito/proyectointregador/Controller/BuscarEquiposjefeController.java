@@ -16,19 +16,10 @@ import javafx.scene.control.Alert.AlertType;
 public class BuscarEquiposjefeController {
 
     @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
-
-    @FXML
     private Button BuscarButton;
 
     @FXML
-    private TextField EquipoLabel;
-
-    @FXML
-    private TextField NumeroSerieTxt;
+    private TextField numeroSerieTxt;
 
     @FXML
     private Button SalirButton;
@@ -38,13 +29,13 @@ public class BuscarEquiposjefeController {
 
     @FXML
     void OnClickBuscarButton(MouseEvent event) {
-        int numeroSerie = Integer.parseInt(NumeroSerieTxt.getText());
+        int numeroSerie = Integer.parseInt(numeroSerieTxt.getText());
         ArrayList<EquiposComputo> listaEquipos = HelloApplication.getEquiposComputo().getlistaEquipos();
 
         EquiposComputo equipoEncontrado = null;
-        for (EquiposComputo equiposComputo : listaEquipos) {
-            if (equiposComputo.getNumeroSerie() == numeroSerie) {
-                equipoEncontrado = equiposComputo;
+        for (EquiposComputo equipos : listaEquipos) {
+            if (equipos.getNumeroSerie() == numeroSerie) {
+                equipoEncontrado = equipos;
                 break;
             }
         }

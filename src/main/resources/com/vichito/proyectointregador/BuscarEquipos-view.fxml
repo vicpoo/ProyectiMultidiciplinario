@@ -16,18 +16,12 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label layoutX="107.0" layoutY="106.0" text="Equipo" textFill="WHITE">
+            <Label layoutX="75.0" layoutY="130.0" text="Numero de serie" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label layoutX="75.0" layoutY="190.0" text="Numero de serie" textFill="WHITE">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Label>
-            <TextField fx:id="EquipoLabel" layoutX="56.0" layoutY="140.0" />
-            <TextField fx:id="NumeroSerieLabel" layoutX="56.0" layoutY="232.0" />
+            <TextField fx:id="NumeroSerieLabel" layoutX="56.0" layoutY="172.0" />
             <Button fx:id="BuscarButton" layoutX="98.0" layoutY="315.0" mnemonicParsing="false" onMouseClicked="#OnClickBuscarButton" style="-fx-background-color: white;" text="Buscar">
                <font>
                   <Font size="15.0" />
