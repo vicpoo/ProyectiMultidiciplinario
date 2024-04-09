@@ -12,7 +12,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.control.Alert;
-import static com.vichito.proyectointregador.Controller.AddUsuarioController.empresa;
 
 public class EliminarEmpleadoController {
 
@@ -36,25 +35,31 @@ public class EliminarEmpleadoController {
 
     @FXML
     void OnClickEliminarButton(MouseEvent event) {
-       /* try {
-            int ID = Integer.parseInt(IdLabel.getText());
-            if (empresa.removeEmpleado(ID)) {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Hecho");
-                alert.setContentText("Empleado eliminado con éxito");
-                alert.showAndWait();
-            } else {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Error");
-                alert.setContentText("No se encontró ningún empleado con ese ID");
-                alert.showAndWait();
-            }
-        } catch (NumberFormatException e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setContentText("Por favor, ingrese un ID válido");
-            alert.showAndWait();
-        } */
+     int Id = Integer.parseInt(IdLabel.getText());
+
+     ArrayList<Empleados> listaEmpleado = HelloApplication.getPersona().getListaEmpleados();
+
+     Empleados empleadoEliminar = null;
+     for (Empleados empleados : listaEmpleado){
+         if (empleados.getID() == Id){
+             empleadoEliminar = empleados;
+             break;
+         }
+     }
+
+     if (empleadoEliminar != null){
+         listaEmpleado.remove(empleadoEliminar);
+         Alert alert = new Alert(Alert.AlertType.INFORMATION);
+         alert.setTitle("Hecho");
+         alert.setContentText("Se elimino con exito");
+         alert.showAndWait();
+     }else {
+         Alert alert = new Alert(Alert.AlertType.INFORMATION);
+         alert.setTitle("Error");
+         alert.setContentText("No se encontro ningun empleado con ese ID");
+         alert.showAndWait();
+     }
+
     }
     @FXML
     void OnClickSalirButton(MouseEvent event) throws IOException {

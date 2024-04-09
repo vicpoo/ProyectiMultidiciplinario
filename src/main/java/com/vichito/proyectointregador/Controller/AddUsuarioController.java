@@ -2,7 +2,10 @@ package com.vichito.proyectointregador.Controller;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
+
+import com.vichito.proyectointregador.Models.Empleados;
 import com.vichito.proyectointregador.Models.Empresa;
 import com.vichito.proyectointregador.Models.Personal;
 import com.vichito.proyectointregador.Models.Usuarios;
@@ -17,7 +20,6 @@ import javafx.scene.layout.AnchorPane;
 
 public class AddUsuarioController {
 
-    protected static Personal empresa = new Personal();
 
     @FXML
     private Button GuardarButton;
@@ -42,27 +44,26 @@ public class AddUsuarioController {
 
     @FXML
     void OnClickGuardarButton(MouseEvent event) {
-     try {
+        ArrayList<Usuarios> usuarios = HelloApplication.getPersona().getListaUsuario();
 
-         String nombre =LabelNombre.getText();
-         String apellido =LabelApellido.getText();
-         int ID = Integer.parseInt(LabelId.getText());
-         String Usuario = LabelUser.getText();
-         Usuarios nuevoUsuario = new Usuarios(nombre,apellido,ID,Usuario);
-         if (empresa.addUsuarios(nuevoUsuario)){
-             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-             alert.setTitle("Hecho");
-             alert.setContentText("Agregado con exito");
-             alert.showAndWait();
-         }
-     }
-     catch (Exception e){
-     Alert alert = new Alert(Alert.AlertType.INFORMATION);
-     alert.setTitle("Error");
-     alert.setContentText("Ha habido un error al agregar los datos" + e.getMessage());
-     alert.showAndWait();
-     }
-    }
+        String nombre = this.LabelNombre.getText();
+        String apellido = this.LabelApellido.getText();
+        String user = this.LabelUser.getText();
+        int Id = Integer.parseInt(LabelId.getText());
+
+        Usuarios usuario = new Usuarios(nombre,apellido,Id,user);
+
+        if (usuarios.add(usuario)){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Hecho");
+            alert.setContentText("Agregado con exito");
+            alert.showAndWait();
+            System.out.println("Se agrego correctamente" + user);
+        }
+        limpiar();
+        }
+
+
 
     @FXML
     void OnClickSalirButton(MouseEvent event) throws IOException {
@@ -74,6 +75,13 @@ public class AddUsuarioController {
     void initialize() {
         background.setStyle(" -fx-background-color: linear-gradient(to right, black, #00008B);");
 
+    }
+
+    public void limpiar(){
+        LabelApellido.clear();
+        LabelId.clear();
+        LabelNombre.clear();
+        LabelUser.clear();
     }
 
 }

@@ -40,9 +40,6 @@ public class Personal {
         return status;
     }
 
-
-
-
     public String getNombre() {
         return nombre;
     }

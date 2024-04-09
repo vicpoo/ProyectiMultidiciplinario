@@ -22,7 +22,7 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <Button fx:id="BuscarButton" layoutX="124.0" layoutY="334.0" mnemonicParsing="false" onMouseClicked="#OnClickBuscarButton" style="-fx-background-color: white;" text="Buscar">
+            <Button fx:id="BuscarButton" layoutX="124.0" layoutY="334.0" mnemonicParsing="false" onMouseClicked="#OnClickBuscarButton" style="-fx-background-color: white;" text="Eliminar">
                <font>
                   <Font size="15.0" />
                </font>

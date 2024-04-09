@@ -1,8 +1,11 @@
 package com.vichito.proyectointregador.Controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import com.vichito.proyectointregador.HelloApplication;
 import com.vichito.proyectointregador.Models.Empleados;
+import com.vichito.proyectointregador.Models.EquiposComputo;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -13,7 +16,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 
-import static com.vichito.proyectointregador.Controller.AddUsuarioController.empresa;
 public class AddEmpleadoController {
 
     @FXML
@@ -46,31 +48,27 @@ public class AddEmpleadoController {
     @FXML
     void OnClickGuardarButton(MouseEvent event) {
 
-        try {
-            String nombre = NombreLabel.getText();
-            String apellidos = LabelApellidos.getText();
-            String Email = LabelEmail.getText();
-            int ID = Integer.parseInt(IdLabel.getText());
-            String Direccion = DireccionLabel.getText();
-            String Area = AreaLabel.getText();
+        ArrayList<Empleados> empleados = HelloApplication.getPersona().getListaEmpleados();
 
-            Empleados nuevoEmpleado = new Empleados(nombre,apellidos,ID,Email,Direccion,Area);
+        String Nombre = this.NombreLabel.getText();
+        String Apellido = this.LabelApellidos.getText();
+        String Area =this.AreaLabel.getText();
+        String Direccion = this.DireccionLabel.getText();
+        String CorreoElectronico = this.LabelEmail.getText();
+        int ID = Integer.parseInt(this.IdLabel.getText());
 
-            if (empresa.addEmpleados(nuevoEmpleado)){
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Hecho");
-                alert.setContentText("Agregado con éxito");
-                alert.showAndWait();
-                System.out.println("se agrego" + nombre);
-            }
-        }
-        catch (Exception e){
-            Alert alert= new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Error");
-            alert.setContentText("Ha habido un error al guardar datos" + e.getMessage());
+        Empleados empleado = new Empleados(Nombre,Apellido,ID,Direccion,Area,CorreoElectronico);
+
+        if (empleados.add(empleado)) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Hecho");
+            alert.setContentText("Agregado con exito");
             alert.showAndWait();
+            System.out.println("Se agrego correctamente" + Nombre);
         }
-    }
+        limpiar();
+        }
+
 
     @FXML
     void OnClickSalirButton(MouseEvent event) throws IOException {
@@ -82,5 +80,14 @@ public class AddEmpleadoController {
         void initialize() {
             background.setStyle(" -fx-background-color: linear-gradient(to right, black, #00008B);");
         }
+
+        private void limpiar(){
+        LabelApellidos.clear();
+        NombreLabel.clear();
+        DireccionLabel.clear();
+        AreaLabel.clear();
+        LabelEmail.clear();
+        IdLabel.clear();
+    }
 
 }
