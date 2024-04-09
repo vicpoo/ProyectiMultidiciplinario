@@ -14,11 +14,6 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Button fx:id="InventaryButton" layoutX="221.0" layoutY="288.0" mnemonicParsing="false" onMouseClicked="#OnClickInventaryButton" style="-fx-background-color: #1e32c9;" text="Ver equipos a Cargo  " textFill="WHITE">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Button>
       <Button fx:id="BuscarButton" layoutX="221.0" layoutY="175.0" mnemonicParsing="false" onMouseClicked="#OnClickBuscarButton" prefHeight="31.0" prefWidth="165.0" style="-fx-background-color: #1e32c9;" text="Buscar Equipos" textFill="WHITE">
          <font>
             <Font size="15.0" />

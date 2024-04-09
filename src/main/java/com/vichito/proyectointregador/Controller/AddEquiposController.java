@@ -59,7 +59,7 @@ public class AddEquiposController {
         if (equiposComputos.add(equipo)){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Hecho");
-            alert.setContentText("Agregado con exito");
+            alert.setContentText("Agregado con exito" + System.lineSeparator() +"Tipo de Equipo: " + TipoEquipo + System.lineSeparator() + "Modelo del equipo: " + modelo + System.lineSeparator() + "Marca del equipo: " + marca + System.lineSeparator()+ "Numero de serie del equipo: "+ NumeroSerie);
             alert.showAndWait();
             System.out.println("Se agrego correctamente" + NumeroSerie);
         }

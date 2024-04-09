@@ -13,39 +13,39 @@
    <children>
       <Pane layoutX="143.0" prefHeight="400.0" prefWidth="315.0" style="-fx-background-color: black;">
          <children>
-            <Label layoutX="92.0" layoutY="141.0" text="Nombre del usuario" textFill="WHITE">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Label>
-            <Label layoutX="74.0" layoutY="95.0" text="Editar Empleados" textFill="WHITE">
+            <Label layoutX="90.0" layoutY="95.0" text="Editar Usuario" textFill="WHITE">
                <font>
                   <Font size="22.0" />
                </font>
             </Label>
-            <Label layoutX="144.0" layoutY="194.0" text="Area" textFill="WHITE">
+            <Label layoutX="149.0" layoutY="236.0" text="ID" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label layoutX="130.0" layoutY="267.0" text="Nombre" textFill="WHITE">
+            <Label layoutX="128.0" layoutY="127.0" text="Nombre" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="UsuarioLabel" layoutX="85.0" layoutY="162.0" />
-            <TextField fx:id="AreaLabel" layoutX="85.0" layoutY="223.0" />
-            <TextField fx:id="NombreLabel" layoutX="83.0" layoutY="300.0" />
-            <Button fx:id="GuardarButton" layoutX="122.0" layoutY="346.0" mnemonicParsing="false" onMouseClicked="#OnClickGuardarButton" style="-fx-background-color: white;" text="Guardar">
+            <TextField fx:id="IdLabel" layoutX="83.0" layoutY="258.0" />
+            <TextField fx:id="NombreLabel" layoutX="85.0" layoutY="149.0" />
+            <Button fx:id="GuardarButton" layoutX="116.0" layoutY="351.0" mnemonicParsing="false" onMouseClicked="#OnClickGuardarButton" style="-fx-background-color: white;" text="Actualizar">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <ImageView fitHeight="98.0" fitWidth="111.0" layoutX="97.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="98.0" fitWidth="111.0" layoutX="103.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@imagenes/Captura%20de%20pantalla%202024-04-08%20210600.png" />
                </image>
             </ImageView>
+            <Label layoutX="122.0" layoutY="183.0" text="Apellidos" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="ApellidosLabel" layoutX="85.0" layoutY="204.0" />
          </children>
       </Pane>
       <Button fx:id="SalirButton" layoutX="534.0" layoutY="361.0" mnemonicParsing="false" onMouseClicked="#OnClickSalirButton" style="-fx-background-color: white;" text="Salir">
@@ -53,5 +53,11 @@
             <Font size="15.0" />
          </font>
       </Button>
+      <Label layoutX="234.0" layoutY="294.0" text="Nombre del usuario" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="UsuarioLabel" layoutX="227.0" layoutY="315.0" />
    </children>
 </AnchorPane>

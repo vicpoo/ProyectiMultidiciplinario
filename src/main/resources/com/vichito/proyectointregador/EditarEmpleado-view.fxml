@@ -13,40 +13,52 @@
    <children>
       <Pane layoutX="156.0" prefHeight="400.0" prefWidth="289.0" style="-fx-background-color: black;">
          <children>
-            <Label layoutX="72.0" layoutY="60.0" text="Editar empleado" textFill="WHITE">
+            <Label layoutX="72.0" layoutY="9.0" text="Editar empleado" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label layoutX="117.0" layoutY="110.0" text="Nombre" textFill="WHITE">
+            <Label fx:id="NombreAbc" layoutX="117.0" layoutY="44.0" text="Nombre" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label layoutX="129.0" layoutY="169.0" text="Area" textFill="WHITE">
+            <Label fx:id="direccionAbc" layoutX="113.0" layoutY="201.0" text="Direccion" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label layoutX="113.0" layoutY="232.0" text="Direccion" textFill="WHITE">
+            <Label fx:id="IdAbc" layoutX="137.0" layoutY="299.0" text="Id" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label layoutX="137.0" layoutY="294.0" text="Id" textFill="WHITE">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Label>
-            <Button fx:id="GuardarButton" layoutX="109.0" layoutY="359.0" mnemonicParsing="false" onMouseClicked="#OnClickGuardarButton" style="-fx-background-color: white;" text="Editar">
+            <Button fx:id="GuardarButton" layoutX="113.0" layoutY="361.0" mnemonicParsing="false" onMouseClicked="#OnClickGuardarButton" style="-fx-background-color: white;" text="Editar">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <TextField fx:id="NombreLabel" layoutX="70.0" layoutY="138.0" />
-            <TextField fx:id="AreaLabel" layoutX="69.0" layoutY="197.0" />
-            <TextField fx:id="DireccionLabel" layoutX="70.0" layoutY="263.0" />
-            <TextField fx:id="IDLabel" layoutX="70.0" layoutY="315.0" />
+            <TextField fx:id="NombreLabel" layoutX="70.0" layoutY="67.0" />
+            <Label fx:id="AreaAbc" layoutX="129.0" layoutY="148.0" text="Area" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="AreaLabel" layoutX="69.0" layoutY="171.0" />
+            <TextField fx:id="DireccionLabel" layoutX="70.0" layoutY="225.0" />
+            <TextField fx:id="IDLabel" layoutX="70.0" layoutY="322.0" />
+            <TextField fx:id="ApellidoLabel" layoutX="71.0" layoutY="121.0" />
+            <Label fx:id="ApellidosAbc" layoutX="115.0" layoutY="100.0" text="Apellidos" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="EmailLabel" layoutX="70.0" layoutY="275.0" />
+            <Label fx:id="EmailTxt" layoutX="85.0" layoutY="253.0" text="Correo Electronico" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
       <Button fx:id="SalirButton" layoutX="517.0" layoutY="361.0" mnemonicParsing="false" onMouseClicked="#OnClickSalirButton" style="-fx-background-color: white;" text="Salir">

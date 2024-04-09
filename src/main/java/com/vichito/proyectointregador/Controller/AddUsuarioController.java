@@ -56,7 +56,7 @@ public class AddUsuarioController {
         if (usuarios.add(usuario)){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Hecho");
-            alert.setContentText("Agregado con exito");
+            alert.setContentText("Agregado con exito" + System.lineSeparator() + " nombre del usuario" + nombre + System.lineSeparator() + "Apellido del usuario:" + apellido + System.lineSeparator() + "Usuario del usuario: " + user + System.lineSeparator() + " ID del usuario :" + Id );
             alert.showAndWait();
             System.out.println("Se agrego correctamente" + user);
         }

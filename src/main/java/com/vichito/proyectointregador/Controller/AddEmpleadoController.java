@@ -62,7 +62,7 @@ public class AddEmpleadoController {
         if (empleados.add(empleado)) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Hecho");
-            alert.setContentText("Agregado con exito");
+            alert.setContentText("Agregado con exito" + System.lineSeparator() + " Nombre del empleado :" + Nombre + System.lineSeparator() + "Apellido del empleado :" + Apellido + System.lineSeparator() + "Area del empleado : "+ Area + System.lineSeparator() + "Dirreccion del empleado :" + Direccion + System.lineSeparator() + "Correo Electronico del empleado :"+CorreoElectronico +System.lineSeparator()+ "Id del empleado" + ID);
             alert.showAndWait();
             System.out.println("Se agrego correctamente" + Nombre);
         }

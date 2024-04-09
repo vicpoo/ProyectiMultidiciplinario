@@ -27,11 +27,6 @@
             <Font size="15.0" />
          </font>
       </Button>
-      <Button fx:id="VerCargoButton" layoutX="222.0" layoutY="278.0" mnemonicParsing="false" onMouseClicked="#OnClickVerCargoButton" style="-fx-background-color: #1e32c9;" text="Ver equipos a Cargo" textFill="WHITE">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Button>
       <Button fx:id="SalirButton" layoutX="534.0" layoutY="361.0" mnemonicParsing="false" onMouseClicked="#OnClickSalirButton" style="-fx-background-color: #1e32c9;" text="Salir" textFill="WHITE">
          <font>
             <Font size="15.0" />
