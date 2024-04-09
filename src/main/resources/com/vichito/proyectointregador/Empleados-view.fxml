@@ -24,7 +24,7 @@
             <Font size="15.0" />
          </font>
       </Button>
-      <Button fx:id="EditarButton" layoutX="226.0" layoutY="168.0" mnemonicParsing="false" onMouseClicked="#OnClickEditarButton" prefHeight="31.0" prefWidth="167.0" style="-fx-background-color: #1e32c9;" text="Editar Empleado" textFill="WHITE">
+      <Button fx:id="EditarButton" layoutX="226.0" layoutY="177.0" mnemonicParsing="false" onMouseClicked="#OnClickEditarButton" prefHeight="31.0" prefWidth="167.0" style="-fx-background-color: #1e32c9;" text="Editar Empleado" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
