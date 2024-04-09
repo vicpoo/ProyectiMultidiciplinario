@@ -3,7 +3,6 @@ package com.vichito.proyectointregador.Controller;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import com.vichito.proyectointregador.Models.Empresa;
 import com.vichito.proyectointregador.Models.Personal;
 import com.vichito.proyectointregador.Models.Usuarios;

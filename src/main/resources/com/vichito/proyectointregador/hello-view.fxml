@@ -46,6 +46,11 @@
                </image>
             </ImageView>
             <Label fx:id="wrongLoginLabel" layoutX="302.0" layoutY="290.0" textFill="RED" />
+            <ImageView fitHeight="83.0" fitWidth="94.0" layoutX="273.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagenes/Captura%20de%20pantalla%202024-04-08%20202806.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </center>
