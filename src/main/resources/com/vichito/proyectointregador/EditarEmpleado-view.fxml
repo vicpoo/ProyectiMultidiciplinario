@@ -3,10 +3,11 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane fx:id="background" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.vichito.proyectointregador.Controller.EditarEmpleadoController">
    <children>
@@ -17,35 +18,35 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label layoutX="117.0" layoutY="101.0" text="Nombre" textFill="WHITE">
+            <Label layoutX="117.0" layoutY="110.0" text="Nombre" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label layoutX="129.0" layoutY="160.0" text="Area" textFill="WHITE">
+            <Label layoutX="129.0" layoutY="169.0" text="Area" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label layoutX="113.0" layoutY="223.0" text="Direccion" textFill="WHITE">
+            <Label layoutX="113.0" layoutY="232.0" text="Direccion" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label layoutX="137.0" layoutY="285.0" text="Id" textFill="WHITE">
+            <Label layoutX="137.0" layoutY="294.0" text="Id" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Button fx:id="GuardarButton" layoutX="104.0" layoutY="361.0" mnemonicParsing="false" onMouseClicked="#OnClickGuardarButton" style="-fx-background-color: white;" text="Button">
+            <Button fx:id="GuardarButton" layoutX="109.0" layoutY="359.0" mnemonicParsing="false" onMouseClicked="#OnClickGuardarButton" style="-fx-background-color: white;" text="Editar">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <TextField fx:id="NombreLabel" layoutX="70.0" layoutY="129.0" />
-            <TextField fx:id="AreaLabel" layoutX="69.0" layoutY="188.0" />
-            <TextField fx:id="DireccionLabel" layoutX="70.0" layoutY="254.0" />
-            <TextField fx:id="IDLabel" layoutX="70.0" layoutY="306.0" />
+            <TextField fx:id="NombreLabel" layoutX="70.0" layoutY="138.0" />
+            <TextField fx:id="AreaLabel" layoutX="69.0" layoutY="197.0" />
+            <TextField fx:id="DireccionLabel" layoutX="70.0" layoutY="263.0" />
+            <TextField fx:id="IDLabel" layoutX="70.0" layoutY="315.0" />
          </children>
       </Pane>
       <Button fx:id="SalirButton" layoutX="517.0" layoutY="361.0" mnemonicParsing="false" onMouseClicked="#OnClickSalirButton" style="-fx-background-color: white;" text="Salir">
@@ -53,5 +54,10 @@
             <Font size="15.0" />
          </font>
       </Button>
+      <ImageView fitHeight="103.0" fitWidth="119.0" layoutX="71.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagenes/Captura%20de%20pantalla%202024-04-08%20144446.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
