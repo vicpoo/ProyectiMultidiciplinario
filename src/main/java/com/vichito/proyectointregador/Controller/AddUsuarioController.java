@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import com.vichito.proyectointregador.Models.Empleados;
-import com.vichito.proyectointregador.Models.Empresa;
 import com.vichito.proyectointregador.Models.Personal;
 import com.vichito.proyectointregador.Models.Usuarios;
 import javafx.scene.control.Alert;
