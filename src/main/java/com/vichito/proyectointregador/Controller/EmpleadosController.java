@@ -3,7 +3,6 @@ package com.vichito.proyectointregador.Controller;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import com.vichito.proyectointregador.HelloApplication;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -34,6 +33,9 @@ public class EmpleadosController {
     private Button SalirButton;
 
     @FXML
+    private Button VerEquiposButton;
+
+    @FXML
     private AnchorPane background;
 
     @FXML
@@ -53,6 +55,13 @@ public class EmpleadosController {
     void OnClickNuevoButton(MouseEvent event) throws IOException{
        HelloApplication escena = new HelloApplication();
        escena.changeScene("AddEmpleado-view.fxml");
+    }
+
+
+    @FXML
+    void OnclickVerEquiposButton(MouseEvent event) throws IOException{
+     HelloApplication escena = new HelloApplication();
+     escena.changeScene("VerEquipos-view.fxml");
     }
 
     @FXML

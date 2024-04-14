@@ -1,5 +1,6 @@
 package com.vichito.proyectointregador;
 import com.vichito.proyectointregador.Models.EquiposComputo;
+import com.vichito.proyectointregador.Models.Inventario;
 import com.vichito.proyectointregador.Models.Personal;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -28,7 +29,9 @@ public class HelloApplication extends Application {
 
     public static EquiposComputo getEquiposComputo() { return equiposComputo;}
 
+    public static Inventario inventario = new Inventario();
 
+    public static Inventario getInventario() { return inventario;}
 
 
     public void changeScene(String fxml)throws IOException{
