@@ -52,7 +52,7 @@ public class BuscarEquiposController {
         if (equipoEncontrado != null) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Búsqueda Exitosa");
-            alert.setContentText("Se encontró el equipo." + System.lineSeparator()+ "Numero de serie del equipo que se elimino"+numeroSerie + System.lineSeparator());
+            alert.setContentText("Se encontró el equipo." + System.lineSeparator()+ "Numero de serie con el que se encontro"+numeroSerie + System.lineSeparator());
             alert.showAndWait();
         } else {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);

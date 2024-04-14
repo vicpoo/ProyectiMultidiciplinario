@@ -3,9 +3,9 @@ package com.vichito.proyectointregador.Models;
 import java.util.ArrayList;
 
 public class Personal {
-    String nombre;
-    String apellido;
-    int ID;
+    private String nombre;
+    private String apellido;
+    private int ID;
 
     private ArrayList<Usuarios> listaUsuario;
 

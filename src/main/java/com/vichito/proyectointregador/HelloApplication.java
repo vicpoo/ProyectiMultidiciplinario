@@ -22,7 +22,7 @@ public class HelloApplication extends Application {
     }
     private static Personal persona = new Personal();
 
-private static EquiposComputo equiposComputo = new EquiposComputo();
+    private static EquiposComputo equiposComputo = new EquiposComputo();
 
     public static Personal getPersona(){ return persona;}
 

@@ -18,47 +18,58 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label fx:id="NombreAbc" layoutX="117.0" layoutY="44.0" text="Nombre" textFill="WHITE">
+            <Label fx:id="NombreAbc" layoutX="117.0" layoutY="44.0" text="Nombre" textFill="WHITE" visible="false">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label fx:id="direccionAbc" layoutX="113.0" layoutY="201.0" text="Direccion" textFill="WHITE">
+            <Label fx:id="direccionAbc" layoutX="113.0" layoutY="201.0" text="Direccion" textFill="WHITE" visible="false">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label fx:id="IdAbc" layoutX="137.0" layoutY="299.0" text="Id" textFill="WHITE">
+            <Label fx:id="IdAbc" layoutX="137.0" layoutY="299.0" text="Id" textFill="WHITE" visible="false">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Button fx:id="GuardarButton" layoutX="113.0" layoutY="361.0" mnemonicParsing="false" onMouseClicked="#OnClickGuardarButton" style="-fx-background-color: white;" text="Editar">
+            <Button fx:id="GuardarButton" layoutX="113.0" layoutY="361.0" mnemonicParsing="false" onMouseClicked="#OnClickGuardarButton" style="-fx-background-color: white;" text="Editar" visible="false">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <TextField fx:id="NombreLabel" layoutX="70.0" layoutY="67.0" />
-            <Label fx:id="AreaAbc" layoutX="129.0" layoutY="148.0" text="Area" textFill="WHITE">
+            <TextField fx:id="NombreLabel" layoutX="70.0" layoutY="67.0" visible="false" />
+            <Label fx:id="AreaAbc" layoutX="129.0" layoutY="148.0" text="Area" textFill="WHITE" visible="false">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="AreaLabel" layoutX="69.0" layoutY="171.0" />
-            <TextField fx:id="DireccionLabel" layoutX="70.0" layoutY="225.0" />
-            <TextField fx:id="IDLabel" layoutX="70.0" layoutY="322.0" />
-            <TextField fx:id="ApellidoLabel" layoutX="71.0" layoutY="121.0" />
-            <Label fx:id="ApellidosAbc" layoutX="115.0" layoutY="100.0" text="Apellidos" textFill="WHITE">
+            <TextField fx:id="AreaLabel" layoutX="69.0" layoutY="171.0" visible="false" />
+            <TextField fx:id="DireccionLabel" layoutX="70.0" layoutY="225.0" visible="false" />
+            <TextField fx:id="IDLabel" layoutX="70.0" layoutY="322.0" visible="false" />
+            <TextField fx:id="ApellidoLabel" layoutX="71.0" layoutY="121.0" visible="false" />
+            <Label fx:id="ApellidosAbc" layoutX="115.0" layoutY="100.0" text="Apellidos" textFill="WHITE" visible="false">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="EmailLabel" layoutX="70.0" layoutY="275.0" />
-            <Label fx:id="EmailTxt" layoutX="85.0" layoutY="253.0" text="Correo Electronico" textFill="WHITE">
+            <TextField fx:id="EmailLabel" layoutX="70.0" layoutY="275.0" visible="false" />
+            <Label fx:id="EmailTxt" layoutX="85.0" layoutY="253.0" text="Correo Electronico" textFill="WHITE" visible="false">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
+            <Label fx:id="ingreseINombreLabel" layoutX="60.0" layoutY="148.0" text="Ingrese Nombre del empleado" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="ingreseNombreText" layoutX="68.0" layoutY="184.0" />
+            <Button fx:id="BuscarButton" layoutX="111.0" layoutY="275.0" mnemonicParsing="false" onMouseClicked="#OnClickBuscarButton" style="-fx-background-color: WHITE;" text="Buscar">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
          </children>
       </Pane>
       <Button fx:id="SalirButton" layoutX="517.0" layoutY="361.0" mnemonicParsing="false" onMouseClicked="#OnClickSalirButton" style="-fx-background-color: white;" text="Salir">

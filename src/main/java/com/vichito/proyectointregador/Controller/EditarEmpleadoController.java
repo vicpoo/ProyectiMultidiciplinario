@@ -31,6 +31,10 @@ public class EditarEmpleadoController {
     private TextField AreaLabel;
 
     @FXML
+    private Button BuscarButton;
+
+
+    @FXML
     private TextField DireccionLabel;
 
     @FXML
@@ -46,13 +50,14 @@ public class EditarEmpleadoController {
     private TextField IDLabel;
 
     @FXML
-    private TextField IDingresarTxt;
-
-    @FXML
     private Label IdAbc;
 
     @FXML
-    private Label IngreseIDABC;
+    private Label ingreseINombreLabel;
+
+    @FXML
+    private TextField ingreseNombreText;
+
 
     @FXML
     private Label NombreAbc;
@@ -70,54 +75,110 @@ public class EditarEmpleadoController {
     private Label direccionAbc;
 
     @FXML
+    void OnClickBuscarButton(MouseEvent event) {
+        String idBuscar = ingreseNombreText.getText();
+        ArrayList<Empleados> listaEmpleados = HelloApplication.getPersona().getListaEmpleados();
+
+        Empleados empleadoEncontrado = null;
+        for (Empleados empleados : listaEmpleados) {
+            if (empleados.getNombre().equals(idBuscar)) {
+                empleadoEncontrado = empleados;
+                break;
+            }
+        }
+
+        if (empleadoEncontrado != null) {
+            Alert alert=new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Búsqueda Exitosa");
+            alert.setContentText("Se encontró el empleado buscado.");
+            alert.showAndWait();
+
+            NombreAbc.setVisible(true);
+            NombreLabel.setVisible(true);
+            direccionAbc.setVisible(true);
+            ApellidoLabel.setVisible(true);
+            ApellidosAbc.setVisible(true);
+            AreaAbc.setVisible(true);
+            AreaLabel.setVisible(true);
+            DireccionLabel.setVisible(true);
+            EmailLabel.setVisible(true);
+            EmailTxt.setVisible(true);
+            IDLabel.setVisible(true);
+            IdAbc.setVisible(true);
+            GuardarButton.setVisible(true);
+
+            IDLabel.setText(String.valueOf(empleadoEncontrado.getID()));
+            NombreLabel.setText(empleadoEncontrado.getNombre());
+            ApellidoLabel.setText(empleadoEncontrado.getApellido());
+            DireccionLabel.setText(empleadoEncontrado.getDireccion());
+            EmailLabel.setText(empleadoEncontrado.getEmail());
+            AreaLabel.setText(empleadoEncontrado.getArea());
+
+            ingreseNombreText.setVisible(false);
+            ingreseINombreLabel.setVisible(false);
+            BuscarButton.setVisible(false);
+        } else {
+            Alert alert=new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Error");
+            alert.setContentText("No se encontró el empleado buscado.");
+            alert.showAndWait();
+        }
+        limpiar();
+
+    }
+
+    @FXML
     void OnClickGuardarButton(MouseEvent event) {
-      String nombre = NombreLabel.getText();
-      String apellido = ApellidoLabel.getText();
-      String area = AreaLabel.getText();
-      String correoElectronico = EmailLabel.getText();
-      String direccion = DireccionLabel.getText();
-      int Id = Integer.parseInt(IDLabel.getText());
+        String id = IDLabel.getText();
+        String nombre = NombreLabel.getText();
+        String apellido = ApellidoLabel.getText();
+        String direccion = DireccionLabel.getText();
+        String email = EmailLabel.getText();
+        String area = AreaLabel.getText();
 
-      if (!nombre.isEmpty() && apellido.isEmpty() && area.isEmpty() && correoElectronico.isEmpty() && direccion.isEmpty() && (Id != 0)){
-          ArrayList<Empleados> listaempleados = HelloApplication.getPersona().getListaEmpleados();
+        if (!id.isEmpty() && !nombre.isEmpty() && !apellido.isEmpty() && !direccion.isEmpty() && !email.isEmpty() && !area.isEmpty()) {
+            ArrayList<Empleados> listaEmpleados = HelloApplication.getPersona().getListaEmpleados();
+            int idBuscado = Integer.parseInt(id);
 
-          for (int i = 0; i<listaempleados.size(); i ++){
-              Empleados empleados = listaempleados.get(i);
-              if (empleados.getID() == Id){
+            for (int i=0; i<listaEmpleados.size();i++) {
+                Empleados empleado = listaEmpleados.get(i);
+                if (empleado.getID() == idBuscado) {
+                empleado.setID(Integer.parseInt(id));
+                empleado.setNombre(nombre);
+                empleado.setApellido(apellido);
+                empleado.setDireccion(direccion);
+                empleado.setEmail(email);
+                empleado.setArea(area);
 
-                  empleados.setNombre(nombre);
-                  empleados.setApellido(apellido);
-                  empleados.setArea(area);
-                  empleados.setEmail(correoElectronico);
-                  empleados.setDireccion(direccion);
-
-                  listaempleados.set(i, empleados );
-
-                  Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                  alert.setTitle("Hecho");
-                  alert.setContentText("Se actualizo con exito");
-                  alert.showAndWait();
-                  System.out.println(" se agrego"+ " " +nombre + apellido);
-
-                  limpiar();
-                  return;
-              }
+                listaEmpleados.set(i, empleado);
 
 
-          }
-      }
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Actualizacion exitosa");
+                alert.setContentText("Se actualizo correctamente ");
+                alert.showAndWait();
+
+                limpiar();
+                return;
+            }
+        }
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Error");
+        alert.setContentText("No se encontró ningún empleado con ese nombre");
+        alert.showAndWait();
+    } else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Error");
+            alert.setContentText("Complete todos los campos");
+            alert.showAndWait();
+        }
     }
 
     @FXML
     void OnClickSalirButton(MouseEvent event) throws IOException {
         HelloApplication escena = new HelloApplication();
         escena.changeScene("Empleados-view.fxml");
-    }
-
-    @FXML
-    void initialize() {
-        background.setStyle(" -fx-background-color: linear-gradient(to right, black, #00008B);");
-
     }
 
     public void limpiar(){
@@ -127,5 +188,10 @@ public class EditarEmpleadoController {
         IDLabel.clear();
         EmailLabel.clear();
         DireccionLabel.clear();
+    }
+
+    @FXML
+    void initialize() {
+        background.setStyle(" -fx-background-color: linear-gradient(to right, black, #00008B);");
     }
 }
