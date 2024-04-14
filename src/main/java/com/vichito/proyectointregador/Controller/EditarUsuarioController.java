@@ -5,6 +5,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import com.vichito.proyectointregador.Models.Empleados;
+import javafx.scene.control.Label;
 import com.vichito.proyectointregador.HelloApplication;
 import com.vichito.proyectointregador.Models.Usuarios;
 import javafx.fxml.FXML;
@@ -17,16 +19,31 @@ import javafx.scene.layout.AnchorPane;
 public class EditarUsuarioController {
 
     @FXML
-    private ResourceBundle resources;
+    private Label ApellidosABc;
 
     @FXML
     private TextField ApellidosLabel;
 
     @FXML
-    private TextField IdLabel;
+    private Button BuscarButton;
 
     @FXML
     private Button GuardarButton;
+
+    @FXML
+    private Label IdABC;
+
+    @FXML
+    private TextField IdLabel;
+
+    @FXML
+    private Label IngreseUsuarioLabel;
+
+    @FXML
+    private TextField IngreseUsuarioText;
+
+    @FXML
+    private Label NombreABC;
 
     @FXML
     private TextField NombreLabel;
@@ -35,43 +52,100 @@ public class EditarUsuarioController {
     private Button SalirButton;
 
     @FXML
+    private Label UsuarioABC;
+
+    @FXML
     private TextField UsuarioLabel;
 
     @FXML
     private AnchorPane background;
 
+
+    @FXML
+    void OnClickBuscarButton(MouseEvent event) {
+        String idBuscar = IngreseUsuarioText.getText();
+        ArrayList<Usuarios> listaUsuarios = HelloApplication.getPersona().getListaUsuario();
+
+        Usuarios usuarioEncontrado = null;
+        for (Usuarios usuarios : listaUsuarios){
+            if (usuarios.getUsuario().equals(idBuscar)){
+                usuarioEncontrado = usuarios;
+                break;
+            }
+        }
+
+        if (usuarioEncontrado != null){
+            Alert alert=new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Búsqueda Exitosa");
+            alert.setContentText("Se encontró el empleado buscado.");
+            alert.showAndWait();
+
+            IdABC.setVisible(true);
+            IdLabel.setVisible(true);
+            NombreLabel.setVisible(true);
+            NombreABC.setVisible(true);
+            GuardarButton.setVisible(true);
+            ApellidosABc.setVisible(true);
+            ApellidosLabel.setVisible(true);
+            UsuarioLabel.setVisible(true);
+            UsuarioABC.setVisible(true);
+
+            IdLabel.setText(String.valueOf(usuarioEncontrado.getID()));
+            NombreLabel.setText(String.valueOf(usuarioEncontrado.getNombre()));
+            ApellidosLabel.setText(String.valueOf(usuarioEncontrado.getApellido()));
+            UsuarioLabel.setText(String.valueOf(usuarioEncontrado.getUsuario()));
+
+            BuscarButton.setVisible(false);
+            IngreseUsuarioLabel.setVisible(false);
+            IngreseUsuarioText.setVisible(false);
+        } else {
+            Alert alert=new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Error");
+            alert.setContentText("No se encontró el usuario buscado.");
+            alert.showAndWait();
+        }
+        limpiar();
+    }
     @FXML
     void OnClickGuardarButton(MouseEvent event) {
+        String Id = IdLabel.getText();
         String nombre = NombreLabel.getText();
         String apellido = ApellidosLabel.getText();
-        int Id = Integer.parseInt(IdLabel.getText());
         String user = UsuarioLabel.getText();
 
-        if (!user.isEmpty() && !(Id !=0) && apellido.isEmpty() && nombre.isEmpty()){
+        if (!Id.isEmpty() && !nombre.isEmpty() && !apellido.isEmpty() && !user.isEmpty()){
+            ArrayList<Usuarios> listaUsuarios = HelloApplication.getPersona().getListaUsuario();
+            int IdBuscado = Integer.parseInt(Id);
 
-            ArrayList<Usuarios> listaUsuario = HelloApplication.getPersona().getListaUsuario();
-
-            Usuarios usuarioActualizado = null;
-            for (int i = 0; i< listaUsuario.size(); i++){
-                Usuarios usuarios = listaUsuario.get(i);
-                if (usuarios.getUsuario().equals(user)){
+            for (int i = 0; i<listaUsuarios.size(); i++){
+                Usuarios usuarios = listaUsuarios.get(i);
+                if (usuarios.getID() == IdBuscado){
+                    usuarios.setID(Integer.parseInt(Id));
+                    usuarios.setUsuario(user);
                     usuarios.setNombre(nombre);
                     usuarios.setApellido(apellido);
-                    usuarios.setID(Id);
 
-                    listaUsuario.set(i, usuarios);
+                    listaUsuarios.set(i, usuarios);
 
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setTitle("Hecho");
-                    alert.setContentText("Se actualizo con exito");
+                    alert.setTitle("Actualizacion exitosa");
+                    alert.setContentText("Se actualizo correctamente ");
                     alert.showAndWait();
 
                     limpiar();
                     return;
                 }
             }
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Error");
+            alert.setContentText("No se encontró ningún usuario con ese nombre");
+            alert.showAndWait();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Error");
+            alert.setContentText("Complete todos los campos");
+            alert.showAndWait();
         }
-
     }
 
     @FXML

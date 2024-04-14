@@ -18,19 +18,19 @@
                   <Font size="22.0" />
                </font>
             </Label>
-            <Label layoutX="149.0" layoutY="236.0" text="ID" textFill="WHITE">
+            <Label fx:id="IdABC" layoutX="149.0" layoutY="236.0" text="ID" textFill="WHITE" visible="false">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label layoutX="128.0" layoutY="127.0" text="Nombre" textFill="WHITE">
+            <Label fx:id="NombreABC" layoutX="128.0" layoutY="127.0" text="Nombre" textFill="WHITE" visible="false">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="IdLabel" layoutX="83.0" layoutY="258.0" />
-            <TextField fx:id="NombreLabel" layoutX="85.0" layoutY="149.0" />
-            <Button fx:id="GuardarButton" layoutX="116.0" layoutY="351.0" mnemonicParsing="false" onMouseClicked="#OnClickGuardarButton" style="-fx-background-color: white;" text="Actualizar">
+            <TextField fx:id="IdLabel" layoutX="83.0" layoutY="258.0" visible="false" />
+            <TextField fx:id="NombreLabel" layoutX="85.0" layoutY="149.0" visible="false" />
+            <Button fx:id="GuardarButton" layoutX="128.0" layoutY="351.0" mnemonicParsing="false" onMouseClicked="#OnClickGuardarButton" style="-fx-background-color: white;" text="Editar" visible="false">
                <font>
                   <Font size="15.0" />
                </font>
@@ -40,12 +40,23 @@
                   <Image url="@imagenes/Captura%20de%20pantalla%202024-04-08%20210600.png" />
                </image>
             </ImageView>
-            <Label layoutX="122.0" layoutY="183.0" text="Apellidos" textFill="WHITE">
+            <Label fx:id="ApellidosABc" layoutX="122.0" layoutY="183.0" text="Apellidos" textFill="WHITE" visible="false">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="ApellidosLabel" layoutX="85.0" layoutY="204.0" />
+            <TextField fx:id="ApellidosLabel" layoutX="85.0" layoutY="204.0" visible="false" />
+            <Label fx:id="IngreseUsuarioLabel" layoutX="64.0" layoutY="139.0" text="Ingrese el Usuario del usuario " textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="IngreseUsuarioText" layoutX="90.0" layoutY="171.0" />
+            <Button fx:id="BuscarButton" layoutX="126.0" layoutY="260.0" mnemonicParsing="false" onMouseClicked="#OnClickBuscarButton" style="-fx-background-color: white;" text="Buscar">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
          </children>
       </Pane>
       <Button fx:id="SalirButton" layoutX="534.0" layoutY="361.0" mnemonicParsing="false" onMouseClicked="#OnClickSalirButton" style="-fx-background-color: white;" text="Salir">
@@ -53,11 +64,11 @@
             <Font size="15.0" />
          </font>
       </Button>
-      <Label layoutX="234.0" layoutY="294.0" text="Nombre del usuario" textFill="WHITE">
+      <Label fx:id="UsuarioABC" layoutX="234.0" layoutY="294.0" text="Nombre del usuario" textFill="WHITE" visible="false">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="UsuarioLabel" layoutX="227.0" layoutY="315.0" />
+      <TextField fx:id="UsuarioLabel" layoutX="227.0" layoutY="315.0" visible="false" />
    </children>
 </AnchorPane>

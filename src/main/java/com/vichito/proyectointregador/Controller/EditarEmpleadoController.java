@@ -124,7 +124,6 @@ public class EditarEmpleadoController {
             alert.showAndWait();
         }
         limpiar();
-
     }
 
     @FXML
@@ -151,8 +150,6 @@ public class EditarEmpleadoController {
                 empleado.setArea(area);
 
                 listaEmpleados.set(i, empleado);
-
-
 
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Actualizacion exitosa");

@@ -57,7 +57,7 @@ if (eliminarUsuario != null){
 else {
     Alert alert = new Alert(Alert.AlertType.INFORMATION);
     alert.setTitle("Error");
-    alert.setContentText("No se encontro ningun empleado con ese ID");
+    alert.setContentText("No se encontro ningun Usuario con ese nombre de usuario");
     alert.showAndWait();
 }
 
