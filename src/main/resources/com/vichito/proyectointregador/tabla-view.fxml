@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="background" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.vichito.proyectointregador.Controller.TablaViewController">
+   <children>
+      <Pane layoutX="116.0" prefHeight="400.0" prefWidth="367.0" style="-fx-background-color: black;">
+         <children>
+            <Button fx:id="RegresarButton" layoutX="145.0" layoutY="333.0" mnemonicParsing="false" onMouseClicked="#OnClickRegresarButton" style="-fx-background-color: white;" text="Regresar">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <TableView fx:id="TableCargoView" layoutX="23.0" layoutY="77.0" prefHeight="243.0" prefWidth="328.0">
+              <columns>
+                <TableColumn fx:id="NombreEmpleadoColumna" prefWidth="165.33334350585938" text="Empleaqdo" />
+                <TableColumn fx:id="ModeloEquipoColumna" minWidth="0.0" prefWidth="161.33331298828125" text="Equipo" />
+              </columns>
+            </TableView>
+            <Label fx:id="textoLabel" layoutX="35.0" layoutY="37.0" text="Ver los empleados con sus equipos asignados" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

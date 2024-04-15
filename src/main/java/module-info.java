@@ -1,6 +1,7 @@
 module com.vichito.proyectointregador {
     requires javafx.controls;
     requires javafx.fxml;
+    opens com.vichito.proyectointregador.Models to javafx.base;
 
     requires org.kordamp.bootstrapfx.core;
 

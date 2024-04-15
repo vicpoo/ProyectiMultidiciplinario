@@ -9,36 +9,40 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane fx:id="background" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.vichito.proyectointregador.Controller.VerEquiposController">
    <children>
-      <Pane layoutX="157.0" prefHeight="400.0" prefWidth="286.0" style="-fx-background-color: black;">
+      <Pane layoutX="98.0" prefHeight="400.0" prefWidth="413.0" style="-fx-background-color: black;">
          <children>
-            <ImageView fitHeight="90.0" fitWidth="93.0" layoutX="43.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="90.0" fitWidth="93.0" layoutX="90.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@imagenes/Captura%20de%20pantalla%202024-04-08%20144446.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="100.0" fitWidth="114.0" layoutX="143.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="100.0" fitWidth="114.0" layoutX="215.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@imagenes/Captura%20de%20pantalla%202024-04-08%20204612.png" />
                </image>
             </ImageView>
+            <Button fx:id="VerTablaButton" layoutX="163.0" layoutY="352.0" mnemonicParsing="false" onMouseClicked="#OnClickVerTablaButton" style="-fx-background-color: white;" text="Ver tabla">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
          </children>
       </Pane>
-      <Button fx:id="SalirButton" layoutX="504.0" layoutY="350.0" mnemonicParsing="false" onMouseClicked="#OnClickSalirButton" style="-fx-background-color: white;" text="Salir">
+      <Button fx:id="SalirButton" layoutX="520.0" layoutY="354.0" mnemonicParsing="false" onMouseClicked="#OnClickSalirButton" style="-fx-background-color: white;" text="Salir">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
       <TextField fx:id="NombreEmpleadoTxt" layoutX="225.0" layoutY="177.0" />
       <TextField fx:id="IdEquipoTxt" layoutX="225.0" layoutY="256.0" />
-      <Label layoutX="191.0" layoutY="151.0" text="Ingrese El Nombre del empleado" textFill="WHITE">
+      <Label fx:id="IngreseNombreEmpleadoABC" layoutX="191.0" layoutY="151.0" text="Ingrese El Nombre del empleado" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="222.0" layoutY="228.0" text="Ingrese El Id del equipo" textFill="WHITE">
+      <Label fx:id="IngreseModeloEquipoABC" layoutX="204.0" layoutY="228.0" text="Ingrese el Modelo del equipo" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>

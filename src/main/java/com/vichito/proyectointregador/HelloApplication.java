@@ -3,6 +3,8 @@ import com.vichito.proyectointregador.Models.EquiposComputo;
 import com.vichito.proyectointregador.Models.Inventario;
 import com.vichito.proyectointregador.Models.Personal;
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -29,9 +31,17 @@ public class HelloApplication extends Application {
 
     public static EquiposComputo getEquiposComputo() { return equiposComputo;}
 
-    public static Inventario inventario = new Inventario();
+    private static Inventario inventario = new Inventario();
 
-    public static Inventario getInventario() { return inventario;}
+    private static ObservableList<Inventario> inventarios = FXCollections.observableArrayList();
+
+    public static  Inventario getInventario() {
+        return inventario;
+    }
+
+    public static  ObservableList<Inventario> getInventarios() {
+        return inventarios;
+    }
 
 
     public void changeScene(String fxml)throws IOException{
