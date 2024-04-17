@@ -14,7 +14,7 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Button fx:id="BuscarButton" layoutX="221.0" layoutY="175.0" mnemonicParsing="false" onMouseClicked="#OnClickBuscarButton" prefHeight="31.0" prefWidth="165.0" style="-fx-background-color: #1e32c9;" text="Buscar Equipos" textFill="WHITE">
+      <Button fx:id="BuscarButton" layoutX="221.0" layoutY="174.0" mnemonicParsing="false" onMouseClicked="#OnClickBuscarButton" prefHeight="31.0" prefWidth="165.0" style="-fx-background-color: #1e32c9;" text="Buscar Equipos" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
@@ -24,7 +24,7 @@
             <Font size="15.0" />
          </font>
       </Button>
-      <Button fx:id="EliminarButton" layoutX="221.0" layoutY="236.0" mnemonicParsing="false" onMouseClicked="#OnClickEliminarButton" prefHeight="31.0" prefWidth="165.0" style="-fx-background-color: #1e32c9;" text="Eliminar Equipos" textFill="WHITE">
+      <Button fx:id="EliminarButton" layoutX="221.0" layoutY="234.0" mnemonicParsing="false" onMouseClicked="#OnClickEliminarButton" prefHeight="31.0" prefWidth="165.0" style="-fx-background-color: #1e32c9;" text="Eliminar Equipos" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
@@ -39,5 +39,10 @@
             <Image url="@imagenes/Captura%20de%20pantalla%202024-04-08%20204612.png" />
          </image>
       </ImageView>
+      <Button fx:id="VerInventarioButton" layoutX="221.0" layoutY="288.0" mnemonicParsing="false" onMouseClicked="#OnClickVerInventarioButton" prefHeight="32.0" prefWidth="165.0" style="-fx-background-color: #1e32c9;" text="Ver Inventario" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

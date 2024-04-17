@@ -48,23 +48,25 @@ protected static EquiposComputo equiposComputo = new EquiposComputo();
 
     @FXML
     void OnClickAgregarButton(MouseEvent event) {
-        ArrayList<EquiposComputo> equiposComputos = HelloApplication.getEquiposComputo().getlistaEquipos();
+      //  ArrayList<EquiposComputo> equiposComputos = HelloApplication.getEquiposComputo().getlistaEquipos();
 
-            String TipoEquipo = tipoEquipoLabel.getText();
-            String modelo = ModeloLabel.getText();
-            String marca = MarcaLabel.getText();
-            int NumeroSerie = Integer.parseInt(NumeroSerieLabel.getText());
+        String TipoEquipo = tipoEquipoLabel.getText();
+        String modelo = ModeloLabel.getText();
+        String marca = MarcaLabel.getText();
+        String NumeroSerie =NumeroSerieLabel.getText();
 
-            EquiposComputo equipo = new EquiposComputo(TipoEquipo,modelo,marca,NumeroSerie);
+        EquiposComputo equipo = new EquiposComputo(TipoEquipo,modelo,marca,NumeroSerie);
 
-            if (equiposComputos.add(equipo)){
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Hecho");
-                alert.setContentText("Agregado con exito" + System.lineSeparator() +"Tipo de Equipo: " + TipoEquipo + System.lineSeparator() + "Modelo del equipo: " + modelo + System.lineSeparator() + "Marca del equipo: " + marca + System.lineSeparator()+ "Numero de serie del equipo: "+ NumeroSerie);
-                alert.showAndWait();
-                System.out.println("Se agrego correctamente" + NumeroSerie);
-            }
-            limpiar();
+        if (!HelloApplication.getEquiposComsjefe().contains(equipo)){
+            HelloApplication.getEquiposComsjefe().add(equipo);
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Hecho");
+            alert.setContentText("Agregado con exito" + System.lineSeparator() +"Tipo de Equipo: " + TipoEquipo + System.lineSeparator() + "Modelo del equipo: " + modelo + System.lineSeparator() + "Marca del equipo: " + marca + System.lineSeparator()+ "Numero de serie del equipo: "+ NumeroSerie);
+            alert.showAndWait();
+            System.out.println("Se agrego correctamente" + NumeroSerie);
+        }
+        limpiar();
     }
 
 

@@ -35,13 +35,13 @@ public class EliminarEmpleadoController {
 
     @FXML
     void OnClickEliminarButton(MouseEvent event) {
-     int Id = Integer.parseInt(IdLabel.getText());
+     String Id = this.IdLabel.getText();
 
      ArrayList<Empleados> listaEmpleado = HelloApplication.getPersona().getListaEmpleados();
 
      Empleados empleadoEliminar = null;
      for (Empleados empleados : listaEmpleado){
-         if (empleados.getID() == Id){
+         if (empleados.getID().equals(Id)){
              empleadoEliminar = empleados;
              break;
          }

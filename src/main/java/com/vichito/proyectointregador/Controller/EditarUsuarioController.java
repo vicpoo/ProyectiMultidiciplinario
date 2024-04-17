@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import com.vichito.proyectointregador.Models.Empleados;
+import javafx.collections.ObservableList;
 import javafx.scene.control.Label;
 import com.vichito.proyectointregador.HelloApplication;
 import com.vichito.proyectointregador.Models.Usuarios;
@@ -64,10 +65,11 @@ public class EditarUsuarioController {
     @FXML
     void OnClickBuscarButton(MouseEvent event) {
         String idBuscar = IngreseUsuarioText.getText();
-        ArrayList<Usuarios> listaUsuarios = HelloApplication.getPersona().getListaUsuario();
+        //ArrayList<Usuarios> listaUsuarios = HelloApplication.getPersona().getListaUsuario();
+        ObservableList<Usuarios> lista = HelloApplication.getUsuariosComs();
 
         Usuarios usuarioEncontrado = null;
-        for (Usuarios usuarios : listaUsuarios){
+        for (Usuarios usuarios : lista){
             if (usuarios.getUsuario().equals(idBuscar)){
                 usuarioEncontrado = usuarios;
                 break;
@@ -114,18 +116,20 @@ public class EditarUsuarioController {
         String user = UsuarioLabel.getText();
 
         if (!Id.isEmpty() && !nombre.isEmpty() && !apellido.isEmpty() && !user.isEmpty()){
-            ArrayList<Usuarios> listaUsuarios = HelloApplication.getPersona().getListaUsuario();
-            int IdBuscado = Integer.parseInt(Id);
+            //ArrayList<Usuarios> listaUsuarios = HelloApplication.getPersona().getListaUsuario();
+            ObservableList<Usuarios> lista = HelloApplication.getUsuariosComs();
 
-            for (int i = 0; i<listaUsuarios.size(); i++){
-                Usuarios usuarios = listaUsuarios.get(i);
-                if (usuarios.getID() == IdBuscado){
-                    usuarios.setID(Integer.parseInt(Id));
+            String IdBuscado = Id;
+
+            for (int i = 0; i<lista.size(); i++){
+                Usuarios usuarios = lista.get(i);
+                if (usuarios.getID().equals(IdBuscado)){
+                    usuarios.setID(Id);
                     usuarios.setUsuario(user);
                     usuarios.setNombre(nombre);
                     usuarios.setApellido(apellido);
 
-                    listaUsuarios.set(i, usuarios);
+                    lista.set(i, usuarios);
 
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("Actualizacion exitosa");

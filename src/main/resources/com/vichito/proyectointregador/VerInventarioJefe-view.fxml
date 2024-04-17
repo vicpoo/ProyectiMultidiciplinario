@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="background" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.vichito.proyectointregador.Controller.VerInventarioJefeController">
+   <children>
+      <Pane layoutX="100.0" prefHeight="400.0" prefWidth="411.0" style="-fx-background-color: black;">
+         <children>
+            <Label layoutX="52.0" layoutY="35.0" text="Inventario de todos los equipos" textFill="WHITE">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tablaInventariotable" layoutX="14.0" layoutY="100.0" prefHeight="273.0" prefWidth="379.0">
+              <columns>
+                <TableColumn fx:id="TipoEquipoColumna" prefWidth="104.66665649414062" text="Tipo de equipo" />
+                <TableColumn fx:id="ModeloEquipoColumna" prefWidth="72.6666259765625" text="Modelo" />
+                  <TableColumn fx:id="MarcaEquipoColumna" prefWidth="75.0" text="Marca" />
+                  <TableColumn fx:id="NumeroSerieEquipoColumna" prefWidth="124.6666259765625" text="Numero de serie" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+      <Button fx:id="SalirButton" layoutX="524.0" layoutY="349.0" mnemonicParsing="false" onMouseClicked="#OnClickSalirButton" style="-fx-background-color: white;" text="Salir">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

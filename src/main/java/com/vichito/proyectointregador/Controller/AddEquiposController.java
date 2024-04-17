@@ -47,21 +47,24 @@ public class AddEquiposController {
 
     @FXML
     void OnClickAddButton(MouseEvent event) {
-        ArrayList<EquiposComputo> equiposComputos = HelloApplication.getEquiposComputo().getlistaEquipos();
+        //ArrayList<EquiposComputo> equiposComputos = HelloApplication.getEquiposComputo().getlistaEquipos();
 
         String TipoEquipo = TipoEquipoLabel.getText();
         String modelo = ModeloLabel.getText();
         String marca = MarcaLabel.getText();
-        int NumeroSerie = Integer.parseInt(NumerSerieLabel.getText());
+        String NumeroSerie = NumerSerieLabel.getText();
 
         EquiposComputo equipo = new EquiposComputo(TipoEquipo,modelo,marca,NumeroSerie);
 
-        if (equiposComputos.add(equipo)){
+        if (!HelloApplication.getEquiposComs().contains(equipo)){
+            HelloApplication.getEquiposComs().add(equipo);
+
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Hecho");
             alert.setContentText("Agregado con exito" + System.lineSeparator() +"Tipo de Equipo: " + TipoEquipo + System.lineSeparator() + "Modelo del equipo: " + modelo + System.lineSeparator() + "Marca del equipo: " + marca + System.lineSeparator()+ "Numero de serie del equipo: "+ NumeroSerie);
             alert.showAndWait();
-            System.out.println("Se agrego correctamente" + NumeroSerie);
+
+            System.out.println("Se agrego correctamente: "+equipo.getNumeroSerie());
         }
         limpiar();
     }

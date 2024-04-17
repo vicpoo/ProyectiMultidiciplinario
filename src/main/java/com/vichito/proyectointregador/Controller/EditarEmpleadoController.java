@@ -137,12 +137,12 @@ public class EditarEmpleadoController {
 
         if (!id.isEmpty() && !nombre.isEmpty() && !apellido.isEmpty() && !direccion.isEmpty() && !email.isEmpty() && !area.isEmpty()) {
             ArrayList<Empleados> listaEmpleados = HelloApplication.getPersona().getListaEmpleados();
-            int idBuscado = Integer.parseInt(id);
+            String idBuscado = id;
 
             for (int i=0; i<listaEmpleados.size();i++) {
                 Empleados empleado = listaEmpleados.get(i);
-                if (empleado.getID() == idBuscado) {
-                empleado.setID(Integer.parseInt(id));
+                if (empleado.getID().equals(idBuscado)) {
+                empleado.setID(id);
                 empleado.setNombre(nombre);
                 empleado.setApellido(apellido);
                 empleado.setDireccion(direccion);

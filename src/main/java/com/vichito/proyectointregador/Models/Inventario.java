@@ -15,6 +15,8 @@ public class Inventario {
     }
 
 
+
+
     private String empleados;
     private String equiposComputo;
 

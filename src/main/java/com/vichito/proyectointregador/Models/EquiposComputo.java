@@ -7,7 +7,7 @@ public class EquiposComputo {
 
     String marca;
     String modelo;
-    int NumeroSerie;
+    String NumeroSerie;
     String TipoEquipo;
 
     private ArrayList<EquiposComputo> listaEquipos;
@@ -15,7 +15,7 @@ public class EquiposComputo {
 
     public ArrayList<EquiposComputo> getlistaEquipos() { return listaEquipos;}
 
-    public EquiposComputo(String tipoEquipo, String modelo, String marca, int numeroSerie) {
+    public EquiposComputo(String tipoEquipo, String modelo, String marca, String numeroSerie) {
         this.TipoEquipo = tipoEquipo;
         this.modelo = modelo;
         this.marca = marca;
@@ -32,7 +32,7 @@ public class EquiposComputo {
 
     public EquiposComputo buscarPorNumeroSerie(int numeroSerie){
         for (EquiposComputo equipo : listaEquipos){
-            if (equipo.getNumeroSerie() == numeroSerie){
+            if (equipo.getNumeroSerie().equals(numeroSerie)){
                 return equipo;
             }
         }
@@ -56,11 +56,11 @@ public class EquiposComputo {
         this.modelo = modelo;
     }
 
-    public int getNumeroSerie() {
+    public String getNumeroSerie() {
         return NumeroSerie;
     }
 
-    public void setNumeroSerie(int numeroSerie) {
+    public void setNumeroSerie(String numeroSerie) {
         NumeroSerie = numeroSerie;
     }
 

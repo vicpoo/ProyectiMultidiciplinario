@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 
 import com.vichito.proyectointregador.HelloApplication;
 import com.vichito.proyectointregador.Models.Usuarios;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -38,7 +39,8 @@ public class EliminarUsuarioController {
     void OnClickEliminarButton(MouseEvent event) {
      String user = NombreUsuarioLabel.getText();
 
-        ArrayList<Usuarios> listaUsuario = HelloApplication.getPersona().getListaUsuario();
+      //  ArrayList<Usuarios> listaUsuario = HelloApplication.getPersona().getListaUsuario();
+        ObservableList<Usuarios> listaUsuario = HelloApplication.getUsuariosComs();
 
         Usuarios eliminarUsuario = null;
         for (Usuarios usuarios : listaUsuario){

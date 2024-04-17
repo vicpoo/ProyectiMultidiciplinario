@@ -28,6 +28,9 @@ public class UsuariosController {
     private Button NuevoButton;
 
     @FXML
+    private Button VerUsuarios;
+
+    @FXML
     private Button SalirButton;
 
     @FXML
@@ -49,6 +52,12 @@ public class UsuariosController {
     void OnClickNuevoButton(MouseEvent event) throws IOException{
       HelloApplication escena = new HelloApplication();
       escena.changeScene("AddUsuario-view.fxml");
+    }
+
+    @FXML
+    void OnClickVerUsuariosButton(MouseEvent event) throws IOException{
+     HelloApplication escena = new HelloApplication();
+     escena.changeScene("VerUsuarios-view.fxml");
     }
 
     @FXML

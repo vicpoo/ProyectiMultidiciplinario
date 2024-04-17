@@ -53,7 +53,7 @@ public class AddEmpleadoController {
         String Area = AreaLabel.getText();
         String Direccion = DireccionLabel.getText();
         String CorreoElectronico = LabelEmail.getText();
-        int ID = Integer.parseInt(IdLabel.getText());
+        String ID = this.IdLabel.getText();
 
         Empleados empleado = new Empleados(Nombre,Apellido,ID,Direccion,Area,CorreoElectronico);
 

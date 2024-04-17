@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 
 import com.vichito.proyectointregador.HelloApplication;
 import com.vichito.proyectointregador.Models.EquiposComputo;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -36,26 +37,27 @@ public class EliminarEquiposjefeController {
 
     @FXML
     void OnClickBuscarButton(MouseEvent event) {
-        int numeroSerie = Integer.parseInt(LabelBuscarNumeroSerie.getText());
+        String numeroSerie = this.LabelBuscarNumeroSerie.getText();
 
-        ArrayList<EquiposComputo> listaEquipos = HelloApplication.getEquiposComputo().getlistaEquipos();
+       // ArrayList<EquiposComputo> listaEquipos = HelloApplication.getEquiposComputo().getlistaEquipos();
+        ObservableList<EquiposComputo> listajefe = HelloApplication.getEquiposComsjefe();
 
         EquiposComputo equipoEliminar = null;
-        for (EquiposComputo equiposComputo : listaEquipos) {
-            if (equiposComputo.getNumeroSerie() == numeroSerie) {
+        for (EquiposComputo equiposComputo : listajefe) {
+            if (equiposComputo.getNumeroSerie().equals(numeroSerie)) {
                 equipoEliminar  = equiposComputo;
                 break;
             }
         }
 
         if (equipoEliminar != null) {
-            listaEquipos.remove(equipoEliminar);
+            listajefe.remove(equipoEliminar);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Eliminar");
             alert.setContentText("Se ha eliminado correctamente.");
             alert.showAndWait();
         } else {
-            listaEquipos.remove(equipoEliminar);
+            listajefe.remove(equipoEliminar);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Error");
             alert.setContentText("No se encontró nigún equipo con ese número de serie.");

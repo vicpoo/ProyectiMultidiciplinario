@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+
+import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 import com.vichito.proyectointregador.HelloApplication;
 import com.vichito.proyectointregador.Models.EquiposComputo;
@@ -29,12 +31,13 @@ public class BuscarEquiposjefeController {
 
     @FXML
     void OnClickBuscarButton(MouseEvent event) {
-        int numeroSerie = Integer.parseInt(numeroSerieTxt.getText());
-        ArrayList<EquiposComputo> listaEquipos = HelloApplication.getEquiposComputo().getlistaEquipos();
+        String numeroSerie = this.numeroSerieTxt.getText();
+     //   ArrayList<EquiposComputo> listaEquipos = HelloApplication.getEquiposComputo().getlistaEquipos();
+        ObservableList<EquiposComputo> listajefe = HelloApplication.getEquiposComsjefe();
 
         EquiposComputo equipoEncontrado = null;
-        for (EquiposComputo equipos : listaEquipos) {
-            if (equipos.getNumeroSerie() == numeroSerie) {
+        for (EquiposComputo equipos : listajefe) {
+            if (equipos.getNumeroSerie().equals(numeroSerie)) {
                 equipoEncontrado = equipos;
                 break;
             }
@@ -43,7 +46,7 @@ public class BuscarEquiposjefeController {
         if (equipoEncontrado != null) {
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Búsqueda Exitosa");
-            alert.setContentText("Se encontró el equipo." + System.lineSeparator()+ "Numero de serie con el que se encontro"+numeroSerie + System.lineSeparator());
+            alert.setContentText("Se encontró el equipo." + System.lineSeparator()+ "Numero de serie con el que se encontro"+numeroSerie + System.lineSeparator() + System.lineSeparator() + " Dispositivo :" + equipoEncontrado.getTipoEquipo() + System.lineSeparator() + "Modelo del equipo:" + equipoEncontrado.getModelo() + System.lineSeparator() + "Marca del equipo" + equipoEncontrado.getMarca());
             alert.showAndWait();
         } else {
             Alert alert = new Alert(AlertType.INFORMATION);

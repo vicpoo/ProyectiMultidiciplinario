@@ -5,7 +5,7 @@ public class Empleados extends Personal{
     String Area;
     String Email;
 
-    public Empleados(String nombre, String apellido , int ID, String Direccion, String Area, String Email){
+    public Empleados(String nombre, String apellido , String ID, String Direccion, String Area, String Email){
      super(nombre,apellido,ID);
      this.Direccion = Direccion;
      this.Area = Area;

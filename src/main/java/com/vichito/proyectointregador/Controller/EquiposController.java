@@ -49,10 +49,9 @@ public class EquiposController {
     }
 
     @FXML
-    void OnClickInventaryButton(MouseEvent event) throws IOException{
-        HelloApplication escena = new HelloApplication();
-        escena.changeScene("");
-
+    void OnClickVerInventarioButton(MouseEvent event) throws IOException{
+     HelloApplication escena = new HelloApplication();
+     escena.changeScene("VerInventarioJefe-view.fxml");
     }
 
     @FXML

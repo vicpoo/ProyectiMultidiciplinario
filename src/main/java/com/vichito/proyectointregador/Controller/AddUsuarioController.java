@@ -43,16 +43,18 @@ public class AddUsuarioController {
 
     @FXML
     void OnClickGuardarButton(MouseEvent event) {
-        ArrayList<Usuarios> usuarios = HelloApplication.getPersona().getListaUsuario();
+        //ArrayList<Usuarios> usuarios = HelloApplication.getPersona().getListaUsuario();
 
         String nombre = this.LabelNombre.getText();
         String apellido = this.LabelApellido.getText();
         String user = this.LabelUser.getText();
-        int Id = Integer.parseInt(LabelId.getText());
+        String Id = this.LabelId.getText();
 
         Usuarios usuario = new Usuarios(nombre,apellido,Id,user);
 
-        if (usuarios.add(usuario)){
+        if (!HelloApplication.getUsuariosComs().contains(usuario)){
+            HelloApplication.getUsuariosComs().add(usuario);
+
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Hecho");
             alert.setContentText("Agregado con exito" + System.lineSeparator() + " nombre del usuario" + nombre + System.lineSeparator() + "Apellido del usuario:" + apellido + System.lineSeparator() + "Usuario del usuario: " + user + System.lineSeparator() + " ID del usuario :" + Id );

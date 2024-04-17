@@ -4,6 +4,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import com.vichito.proyectointregador.Models.EquiposComputo;
+import com.vichito.proyectointregador.Models.Inventario;
+import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
 import com.vichito.proyectointregador.HelloApplication;
@@ -38,12 +40,13 @@ public class BuscarEquiposController {
 
     @FXML
     void OnClickBuscarButton(MouseEvent event) {
-        int numeroSerie = Integer.parseInt(NumeroSerieLabel.getText());
-        ArrayList<EquiposComputo> listaEquipos = HelloApplication.getEquiposComputo().getlistaEquipos();
+        String numeroSerie = this.NumeroSerieLabel.getText();
+        //ArrayList<EquiposComputo> listaEquipos = HelloApplication.getEquiposComputo().getlistaEquipos();
+        ObservableList<EquiposComputo> lista = HelloApplication.getEquiposComs();
 
         EquiposComputo equipoEncontrado = null;
-        for (EquiposComputo equiposComputo : listaEquipos) {
-            if (equiposComputo.getNumeroSerie() == numeroSerie) {
+        for (EquiposComputo equiposComputo : lista) {
+            if (equiposComputo.getNumeroSerie().equals(numeroSerie)) {
                 equipoEncontrado = equiposComputo;
                 break;
             }
@@ -52,7 +55,7 @@ public class BuscarEquiposController {
         if (equipoEncontrado != null) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Búsqueda Exitosa");
-            alert.setContentText("Se encontró el equipo." + System.lineSeparator()+ "Numero de serie con el que se encontro"+numeroSerie + System.lineSeparator());
+            alert.setContentText("Se encontró el equipo." + System.lineSeparator()+ "Numero de serie con el que se encontro"+ numeroSerie + System.lineSeparator()+System.lineSeparator() + "Marca del equipo: "+ equipoEncontrado.getMarca() + System.lineSeparator() + " Modelo del equipo :" + equipoEncontrado.getModelo() + System.lineSeparator() + " Dispositivo :" + equipoEncontrado.getTipoEquipo());
             alert.showAndWait();
         } else {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);

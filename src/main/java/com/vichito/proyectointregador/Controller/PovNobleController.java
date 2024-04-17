@@ -28,6 +28,9 @@ public class PovNobleController {
     private Button EliminarButton;
 
     @FXML
+    private Button VerInventarioButton;
+
+    @FXML
     private Button SalirButton;
 
     @FXML
@@ -55,20 +58,22 @@ public class PovNobleController {
     }
 
     @FXML
+    void OnCickVerInventarioButton(MouseEvent event) throws IOException{
+     HelloApplication escena = new HelloApplication();
+     escena.changeScene("VerInventario-view.fxml");
+    }
+
+
+    @FXML
     void OnClickSalirButton(MouseEvent event) throws IOException {
         HelloApplication escena = new HelloApplication();
         escena.changeScene("hello-view.fxml");
     }
 
-    @FXML
-    void OnClickVerCargoButton(MouseEvent event) {
-
-    }
 
     @FXML
     void initialize() {
         background.setStyle(" -fx-background-color: linear-gradient(to right, black, #00008B);");
-
     }
 
 }

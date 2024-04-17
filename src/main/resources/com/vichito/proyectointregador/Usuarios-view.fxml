@@ -19,12 +19,12 @@
             <Font size="15.0" />
          </font>
       </Button>
-      <Button fx:id="EliminarButton" layoutX="236.0" layoutY="254.0" mnemonicParsing="false" onMouseClicked="#OnClickEliminarButton" style="-fx-background-color: #1e32c9;" text="Eliminar Usuario" textFill="WHITE">
+      <Button fx:id="EliminarButton" layoutX="231.0" layoutY="254.0" mnemonicParsing="false" onMouseClicked="#OnClickEliminarButton" prefHeight="32.0" prefWidth="136.0" style="-fx-background-color: #1e32c9;" text="Eliminar Usuario" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button fx:id="EditarButton" layoutX="236.0" layoutY="192.0" mnemonicParsing="false" onMouseClicked="#OnClickEditarButton" prefHeight="31.0" prefWidth="128.0" style="-fx-background-color: #1e32c9;" text="Editar Usuario" textFill="WHITE">
+      <Button fx:id="EditarButton" layoutX="230.0" layoutY="192.0" mnemonicParsing="false" onMouseClicked="#OnClickEditarButton" prefHeight="32.0" prefWidth="136.0" style="-fx-background-color: #1e32c9;" text="Editar Usuario" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
@@ -39,5 +39,10 @@
             <Image url="@imagenes/Captura%20de%20pantalla%202024-04-08%20202806.png" />
          </image>
       </ImageView>
+      <Button fx:id="VerUsuarios" layoutX="232.0" layoutY="307.0" mnemonicParsing="false" onMouseClicked="#OnClickVerUsuariosButton" prefHeight="32.0" prefWidth="136.0" style="-fx-background-color: #1e32c9;" text="Ver los usuarios" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

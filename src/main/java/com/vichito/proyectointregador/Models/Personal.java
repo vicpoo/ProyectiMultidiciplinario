@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Personal {
     private String nombre;
     private String apellido;
-    private int ID;
+    private String ID;
 
     private ArrayList<Usuarios> listaUsuario;
 
@@ -21,7 +21,7 @@ public class Personal {
     public ArrayList<Empleados> getListaEmpleados() { return listaEmpleados;}
 
 
-    public Personal(String nombre, String apellido, int ID) {
+    public Personal(String nombre, String apellido, String ID) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.ID = ID;
@@ -56,11 +56,11 @@ public class Personal {
         this.apellido = apellido;
     }
 
-    public int getID() {
+    public String getID() {
         return ID;
     }
 
-    public void setID(int ID) {
+    public void setID(String ID) {
         this.ID = ID;
     }
 }
