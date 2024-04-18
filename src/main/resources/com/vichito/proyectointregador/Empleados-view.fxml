@@ -24,12 +24,12 @@
             <Font size="15.0" />
          </font>
       </Button>
-      <Button fx:id="EditarButton" layoutX="226.0" layoutY="177.0" mnemonicParsing="false" onMouseClicked="#OnClickEditarButton" prefHeight="31.0" prefWidth="167.0" style="-fx-background-color: #1e32c9;" text="Editar Empleado" textFill="WHITE">
+      <Button fx:id="EditarButton" layoutX="226.0" layoutY="170.0" mnemonicParsing="false" onMouseClicked="#OnClickEditarButton" prefHeight="31.0" prefWidth="167.0" style="-fx-background-color: #1e32c9;" text="Editar Empleado" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button fx:id="EliminarButton" layoutX="227.0" layoutY="238.0" mnemonicParsing="false" onMouseClicked="#OnClickEliminarButton" prefHeight="31.0" prefWidth="167.0" style="-fx-background-color: #1e32c9;" text="Eliminar Empleado" textFill="WHITE">
+      <Button fx:id="EliminarButton" layoutX="227.0" layoutY="223.0" mnemonicParsing="false" onMouseClicked="#OnClickEliminarButton" prefHeight="31.0" prefWidth="167.0" style="-fx-background-color: #1e32c9;" text="Eliminar Empleado" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
@@ -39,7 +39,12 @@
             <Image url="@imagenes/Captura%20de%20pantalla%202024-04-08%20144446.png" />
          </image>
       </ImageView>
-      <Button fx:id="VerEquiposButton" layoutX="227.0" layoutY="292.0" mnemonicParsing="false" onMouseClicked="#OnclickVerEquiposButton" prefHeight="32.0" prefWidth="167.0" style="-fx-background-color: #1e32c9;" text="Ver equipos a cargo" textFill="WHITE">
+      <Button fx:id="VerEquiposButton" layoutX="227.0" layoutY="278.0" mnemonicParsing="false" onMouseClicked="#OnclickVerEquiposButton" prefHeight="32.0" prefWidth="167.0" style="-fx-background-color: #1e32c9;" text="Ver equipos a cargo" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="VerEmpleadosButton" layoutX="227.0" layoutY="329.0" mnemonicParsing="false" onMouseClicked="#OnClickVerEmpleadosButton" prefHeight="32.0" prefWidth="167.0" style="-fx-background-color: #1e32c9;" text="Ver Empleados" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>

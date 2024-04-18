@@ -13,6 +13,7 @@ import com.vichito.proyectointregador.HelloApplication;
 import com.vichito.proyectointregador.Models.Empleados;
 import com.vichito.proyectointregador.Models.EquiposComputo;
 import javafx.fxml.FXML;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -44,12 +45,16 @@ public class VerEquiposController implements Initializable {
     private Button VolverButton;
 
     @FXML
+    private DatePicker fechaDate;
+
+    @FXML
     private AnchorPane background;
 
     @FXML
         void OnClickEncargarButton(MouseEvent event) {
         String idBuscar = IdEquipoTxt.getText();
         String nombreBuscar = NombreEmpleadoTxt.getText();
+
 
         Inventario inventario = new Inventario(idBuscar, nombreBuscar);
 
@@ -58,7 +63,7 @@ public class VerEquiposController implements Initializable {
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Éxito");
-            alert.setContentText("Se asigno un nuevo equipo");//Aquí si quieres pones que equipo y a quien
+            alert.setContentText("Se asigno un nuevo equipo");
             alert.showAndWait();
 
             System.out.println("Empleado: "+inventario.getEmpleados());

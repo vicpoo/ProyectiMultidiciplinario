@@ -14,9 +14,6 @@ public class Inventario {
     public ArrayList<Inventario> getListaInvetario() { return  listaInvetario;
     }
 
-
-
-
     private String empleados;
     private String equiposComputo;
 

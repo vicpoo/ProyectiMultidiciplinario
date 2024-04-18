@@ -24,6 +24,9 @@ public class EmpleadosController {
     private Button EliminarButton;
 
     @FXML
+    private Button VerEmpleadosButton;
+
+    @FXML
     private Button EquipoCargoButton;
 
     @FXML
@@ -57,6 +60,11 @@ public class EmpleadosController {
        escena.changeScene("AddEmpleado-view.fxml");
     }
 
+    @FXML
+    void OnClickVerEmpleadosButton(MouseEvent event) throws IOException{
+     HelloApplication escena = new HelloApplication();
+     escena.changeScene("VerEmpleados-view.fxml");
+    }
 
     @FXML
     void OnclickVerEquiposButton(MouseEvent event) throws IOException{

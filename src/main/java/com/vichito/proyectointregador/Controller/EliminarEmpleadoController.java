@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 import com.vichito.proyectointregador.HelloApplication;
 import com.vichito.proyectointregador.Models.Empleados;
 import javafx.application.Application;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -37,7 +38,8 @@ public class EliminarEmpleadoController {
     void OnClickEliminarButton(MouseEvent event) {
      String Id = this.IdLabel.getText();
 
-     ArrayList<Empleados> listaEmpleado = HelloApplication.getPersona().getListaEmpleados();
+     //ArrayList<Empleados> listaEmpleado = HelloApplication.getPersona().getListaEmpleados();
+        ObservableList<Empleados> listaEmpleado = HelloApplication.getEmpleadosComs();
 
      Empleados empleadoEliminar = null;
      for (Empleados empleados : listaEmpleado){

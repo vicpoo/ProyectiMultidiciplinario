@@ -47,7 +47,9 @@ public class AddEmpleadoController {
 
     @FXML
     void OnClickGuardarButton(MouseEvent event) {
-        ArrayList<Empleados> empleados = HelloApplication.getPersona().getListaEmpleados();
+
+        //ArrayList<Empleados> empleados = HelloApplication.getPersona().getListaEmpleados();
+
         String Nombre = NombreLabel.getText();
         String Apellido = LabelApellidos.getText();
         String Area = AreaLabel.getText();
@@ -57,7 +59,8 @@ public class AddEmpleadoController {
 
         Empleados empleado = new Empleados(Nombre,Apellido,ID,Direccion,Area,CorreoElectronico);
 
-        if (empleados.add(empleado)) {
+        if (!HelloApplication.getEmpleadosComs().contains(empleado)) {
+            HelloApplication.getEmpleadosComs().add(empleado);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Hecho");
             alert.setContentText("Agregado con exito" + System.lineSeparator() + " Nombre del empleado :" + Nombre + System.lineSeparator() + "Apellido del empleado :" + Apellido + System.lineSeparator() + "Area del empleado : "+ Area + System.lineSeparator() + "Dirreccion del empleado :" + Direccion + System.lineSeparator() + "Correo Electronico del empleado :"+CorreoElectronico +System.lineSeparator()+ "Id del empleado" + ID);

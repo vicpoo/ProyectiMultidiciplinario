@@ -17,7 +17,7 @@ public class HelloApplication extends Application {
         stg = stage;
         stage.setResizable(false);
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
+        Scene scene = new Scene(fxmlLoader.load(),630 , 400);
         stage.setTitle("Administracion de Equipos");
         stage.setScene(scene);
         stage.show();
@@ -55,6 +55,16 @@ public class HelloApplication extends Application {
     public static ObservableList<Usuarios> getUsuariosComs(){ return usuariosComs;}
 
     //fin de data base
+    // inicio de Basedatos
+
+    private static BaseDatos baseDato = new BaseDatos();
+    private static ObservableList<BaseDatos> baseDatos = FXCollections.observableArrayList();
+    public static BaseDatos getBaseDato(){ return baseDato;}
+    private static ObservableList<BaseDatos> getBaseDatos(){return baseDatos;}
+    private static ObservableList<Empleados> empleadosComs = FXCollections.observableArrayList();
+    public static ObservableList<Empleados> getEmpleadosComs(){ return empleadosComs;}
+
+    // fin de basedatos
 
     private static InventarioJefe inventarioJefe = new InventarioJefe();
     private static ObservableList<InventarioJefe> inventariosJefes = FXCollections.observableArrayList();

@@ -8,6 +8,7 @@ import java.util.ResourceBundle;
 import com.vichito.proyectointregador.HelloApplication;
 import com.vichito.proyectointregador.Models.Empleados;
 import com.vichito.proyectointregador.Models.Usuarios;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -77,11 +78,12 @@ public class EditarEmpleadoController {
     @FXML
     void OnClickBuscarButton(MouseEvent event) {
         String idBuscar = ingreseNombreText.getText();
-        ArrayList<Empleados> listaEmpleados = HelloApplication.getPersona().getListaEmpleados();
+        //ArrayList<Empleados> listaEmpleados = HelloApplication.getPersona().getListaEmpleados();
+        ObservableList<Empleados> listaEmpleados = HelloApplication.getEmpleadosComs();
 
         Empleados empleadoEncontrado = null;
         for (Empleados empleados : listaEmpleados) {
-            if (empleados.getNombre().equals(idBuscar)) {
+            if (empleados.getID().equals(idBuscar)) {
                 empleadoEncontrado = empleados;
                 break;
             }
@@ -136,11 +138,13 @@ public class EditarEmpleadoController {
         String area = AreaLabel.getText();
 
         if (!id.isEmpty() && !nombre.isEmpty() && !apellido.isEmpty() && !direccion.isEmpty() && !email.isEmpty() && !area.isEmpty()) {
-            ArrayList<Empleados> listaEmpleados = HelloApplication.getPersona().getListaEmpleados();
+            //ArrayList<Empleados> listaEmpleados = HelloApplication.getPersona().getListaEmpleados();
+            ObservableList<Empleados> lista = HelloApplication.getEmpleadosComs();
+
             String idBuscado = id;
 
-            for (int i=0; i<listaEmpleados.size();i++) {
-                Empleados empleado = listaEmpleados.get(i);
+            for (int i=0; i<lista.size();i++) {
+                Empleados empleado = lista.get(i);
                 if (empleado.getID().equals(idBuscado)) {
                 empleado.setID(id);
                 empleado.setNombre(nombre);
@@ -149,7 +153,7 @@ public class EditarEmpleadoController {
                 empleado.setEmail(email);
                 empleado.setArea(area);
 
-                listaEmpleados.set(i, empleado);
+                lista.set(i, empleado);
 
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Actualizacion exitosa");

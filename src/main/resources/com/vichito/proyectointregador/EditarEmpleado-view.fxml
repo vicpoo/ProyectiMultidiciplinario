@@ -59,7 +59,7 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label fx:id="ingreseINombreLabel" layoutX="47.0" layoutY="148.0" text="Ingrese Nombre del empleado" textFill="WHITE">
+            <Label fx:id="ingreseINombreLabel" layoutX="47.0" layoutY="148.0" text="Ingrese El ID del empleado" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
